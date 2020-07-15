@@ -1,0 +1,19 @@
+<header class="header">
+    <img src="/assets/logo/logo_original_whitebg@2x.png" alt="logo">
+    <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
+              <div class="language" (click)="openlngMenu()">{{language[0]}}<i class="icon-arrow" (click)="openlngMenu()"></i></div>
+              <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
+                <li #li (click)="chooseLanguage('ua')">{{language[1]}}</li>
+                <li #li2 (click)="chooseLanguage('ru')">{{language[2]}}</li>
+              </ul>
+    </div>
+</header>
+<figure>
+    <img src="/assets/images/mainCity.jpg" alt="logo">
+</figure>
+<div class="eclipse">
+    <div class="mission" data-aos="flip-right" data-aos-duration="3000">
+        <div><h2>{{language[3]}}</h2></div>
+        <div><h3>{{language[4]}}</h3><span>{{language[5]}}</span><h1>{{language[6]}}</h1><span>{{language[7]}}</span></div>
+    </div>
+</div>

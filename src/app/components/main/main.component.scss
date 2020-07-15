@@ -1,0 +1,121 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 85px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  z-index:999;
+
+  img{
+	  width: 9%;
+	  margin-top: 8px;
+	  margin-bottom: 15px;
+  }
+
+  .dropMenu {
+	width: 150px;
+	position: relative;
+
+    ul, li {
+	  list-style-type: none;
+	  background-color: white;
+	  color: var(--blue);
+	  border: 1px solid var(--blue);
+	  &:hover{
+		  cursor: pointer;
+	  }
+	}
+	li{
+		display: none;
+		&:hover{
+			background-color: black;
+			color: white;
+			cursor: pointer;
+		}
+	}
+
+    .language {
+      width: 150px;
+      padding: 10px 40px;
+      height: 35px;
+      background-color: var(--blue);
+	  color: white;
+	  text-transform: uppercase;
+	  &:hover{
+		cursor:pointer;
+	  }
+    }
+	
+    .dropdown {
+		width: 150px;
+		height: 0px;
+		display: block;
+		color: white;
+		background: var(--blue);
+		position: absolute;
+		top: 34px;
+		text-transform: uppercase;
+		text-align: center;
+		transition-duration: .5s;
+		transition-property: height;
+		
+	}
+
+    .icon-arrow {
+      position: absolute;
+      display: block;
+      font-size: 0.7em;
+      color: #fff;
+      top: 14px;
+      right: 10px;
+
+      &:before {
+        content: '\25BC';
+      }
+    }
+  }
+}
+figure{
+	img{
+		width: 100vw;
+		height: 585px;
+		object-fit: cover;
+		position: fixed;
+		top: 85px;
+	}
+}
+.eclipse{
+	top: 85px;
+	width: 100%;
+	height: 585px;
+	background-color: rgba(86, 178, 250, .3);
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.mission{
+	width: 470px;
+	height: 200px;
+	h2{
+		color: white;
+		font-size: 45px;
+		text-shadow: 1px 1px 1px grey;
+	}
+	h3{
+		text-shadow: 1px 1px 1px grey;
+		color: white;
+		font-size: 45px;
+		font-weight: 100;
+	}
+	
+	span, h1{
+		text-shadow: 2px 2px 2px grey;
+		color: white;
+		font-size: 27px;
+		font-weight: 100;
+		}
+	}
