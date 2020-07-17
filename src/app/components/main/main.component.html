@@ -1,19 +1,64 @@
-<header class="header">
+<div class="container" (scroll)="onScroll($event)">
+  <header class="header">
     <img src="/assets/logo/logo_original_whitebg@2x.png" alt="logo">
     <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
-              <div class="language" (click)="openlngMenu()">{{language[0]}}<i class="icon-arrow" (click)="openlngMenu()"></i></div>
-              <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
-                <li #li (click)="chooseLanguage('ua')">{{language[1]}}</li>
-                <li #li2 (click)="chooseLanguage('ru')">{{language[2]}}</li>
-              </ul>
+      <div class="language" (click)="openlngMenu()">{{language.headerText[0]}}<i class="icon-arrow"></i>
+      </div>
+      <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
+        <li #li (click)="chooseLanguage('ua')">{{language.headerText[1]}}</li>
+        <li #li2 (click)="chooseLanguage('ru')">{{language.headerText[2]}}</li>
+      </ul>
     </div>
-</header>
-<figure>
-    <img src="/assets/images/mainCity.jpg" alt="logo">
-</figure>
-<div class="eclipse">
-    <div class="mission" data-aos="flip-right" data-aos-duration="3000">
-        <div><h2>{{language[3]}}</h2></div>
-        <div><h3>{{language[4]}}</h3><span>{{language[5]}}</span><h1>{{language[6]}}</h1><span>{{language[7]}}</span></div>
+  </header>
+  <figure>
+    <img src="/assets/images/mainCity.jpg" alt="mainPicture" #picture>
+  </figure>
+  <main class="mainContainer">
+    <div class="eclipse">
+      <section class="mission" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+        <div>
+          <h2>{{language.missionText[0]}}</h2>
+        </div>
+        <div>
+          <h3>{{language.missionText[1]}}</h3><span>{{language.missionText[2]}}</span>
+          <h1>{{language.missionText[3]}}</h1><span>{{language.missionText[4]}}</span>
+        </div>
+      </section>
     </div>
+    <section class="purposes">
+      <h3>{{language.purposesText[0]}}</h3>
+      <div class="dspl-flx-jstf-spc-rnd">
+        <div class="purposeWrap" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+          <div class="border">
+            <span>{{language.purposesText[1]}}</span>
+          </div>
+        </div>
+        <div class="purposeWrap2" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="200">
+          <div class="border">
+            <span>{{language.purposesText[2]}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="dspl-flx-jstf-spc-rnd">
+        <div class="purposeWrap2" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="300">
+          <div class="border">
+            <span>{{language.purposesText[3]}}</span>
+          </div>
+        </div>
+        <div class="purposeWrap" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="400">
+          <div class="border">
+            <span>{{language.purposesText[4]}}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="eclipse aboutUs">
+        <div>
+            <h3>{{language.aboutUsTitle[0]}}</h3>
+        </div>
+        <ul>
+            <li *ngFor="let item of language.aboutUs; let i=index">{{language.aboutUs[i]}}</li>
+        </ul>
+    </section>
+  </main>
 </div>
