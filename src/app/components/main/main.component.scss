@@ -191,20 +191,32 @@ figure{
 	}
 	.aboutUs{
 		background: linear-gradient(90deg, rgba(83, 160, 231, 0.7), rgba(214, 225, 235, 0.3));
-		padding: 30px;
+		padding: 30px 0px;
 		text-shadow: 1px 1px 1px grey;
 
-		h3{
-			color: goldenrod;
+		.textWrapper{
+			padding: 0px 50px;
+			width: 100vw;
+			height: 300px;
+			background-color: rgb(221, 221, 217);
+			
+			h3{
+			margin-left: 30px;
+			color: var(--blue);
 			font-size: 45px;
 			text-shadow: 1px 1px 1px grey;
 		}
-		li{
-			font-size: 21px;
-			color: black;
-			font-weight: 700;
-			text-shadow: 1px 1px 1px grey;
+		ul{
+			padding: 20px 40px;
+			
+			li{
+				font-size: 21px;
+				color: black;
+				font-weight: 700;
+				text-shadow: 1px 1px 1px grey;
 		}
 	}
+}
+}
 }
 

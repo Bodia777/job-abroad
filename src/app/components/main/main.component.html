@@ -53,12 +53,14 @@
       </div>
     </section>
     <section class="eclipse aboutUs">
-        <div>
-            <h3>{{language.aboutUsTitle[0]}}</h3>
+        <div class="textWrapper">
+            <div>
+                <h3>{{language.aboutUsTitle[0]}}</h3>
         </div>
         <ul>
             <li *ngFor="let item of language.aboutUs; let i=index">{{language.aboutUs[i]}}</li>
         </ul>
+    </div>
     </section>
   </main>
 </div>
