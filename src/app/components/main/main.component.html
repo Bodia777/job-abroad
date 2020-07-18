@@ -10,6 +10,8 @@
                       <div class="language" (click)="openlngMenu()">{{content.headerText.language}}<i class="icon-arrow"></i>
                       </div>
                       <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
+
+<!--                          asd-->
                           <li #li (click)="chooseLanguage('ua')">{{content.headerText.languageOptions[0]}}</li>
                           <li #li2 (click)="chooseLanguage('ru')">{{content.headerText.languageOptions[1]}}</li>
                       </ul>
