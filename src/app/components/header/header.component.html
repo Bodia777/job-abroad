@@ -6,11 +6,11 @@
             </div>
             <div class="col-2 offset-9">
                 <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
-                    <div class="language" (click)="openlngMenu()">{{content.headerText.language}}<i class="icon-arrow"></i>
+                    <div class="language" (click)="openlngMenu()">{{content.headerText.language }}<i class="icon-arrow"></i>
                     </div>
                     <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
-                        <li #li (click)="chooseLanguage('ua')">{{content.headerText.languageOptions[0]}}</li>
-                        <li #li2 (click)="chooseLanguage('ru')">{{content.headerText.languageOptions[1]}}</li>
+                        <li #li (click)="chooseLanguage('ua')">{{content.headerText.languageOptions[0] }}</li>
+                        <li #li2 (click)="chooseLanguage('ru')">{{content.headerText.languageOptions[1] }}</li>
                     </ul>
                 </div>
             </div>

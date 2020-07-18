@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { Text } from 'src/app/interfaces/language.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class LanguageService {
-    public content = new Subject<any>();
 
     constructor() {
     }
 
 
-    private contentContainer = {
+    public contentContainer = {
         ua: {
             headerText: {
-                language: 'мова:',
+                language: 'мова: UA',
                 languageOptions: ['українська', 'російська']
             },
             bannerText: {
@@ -56,8 +56,9 @@ export class LanguageService {
             }
         }
     };
+    public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);
 
     public changeLanguage(language = 'ua'): void {
-        this.content.next(this.contentContainer[language]);
+        this.content$.next(this.contentContainer[language]);
     }
 }
