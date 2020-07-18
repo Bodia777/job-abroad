@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <img src="/assets/logo/logo_original_whitebg@2x.png" alt="logo">
+            </div>
+            <div class="col-2 offset-9">
+                <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
+                    <div class="language" (click)="openlngMenu()">{{content.headerText.language}}<i class="icon-arrow"></i>
+                    </div>
+                    <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
+                        <li #li (click)="chooseLanguage('ua')">{{content.headerText.languageOptions[0]}}</li>
+                        <li #li2 (click)="chooseLanguage('ru')">{{content.headerText.languageOptions[1]}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

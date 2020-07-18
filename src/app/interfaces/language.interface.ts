@@ -1,4 +1,4 @@
-export class Text {
+export interface Text {
     headerText: {
         language: string;
         languageOptions: string[];
@@ -11,5 +11,5 @@ export class Text {
     };
     aboutUsText: {
         blocks: string[];
-    }
+    };
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from "rxjs";
+import { Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -55,9 +55,9 @@ export class LanguageService {
                 blocks: []
             }
         }
-    }
+    };
 
-    public changeLanguage(language = 'ua') {
+    public changeLanguage(language = 'ua'): void {
         this.content.next(this.contentContainer[language]);
     }
 }

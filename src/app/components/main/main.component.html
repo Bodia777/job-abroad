@@ -1,59 +1,10 @@
 <div (scroll)="onScroll($event)">
-  <header class="header">
-      <div class="container">
-          <div class="row">
-              <div class="col-1">
-                  <img src="/assets/logo/logo_original_whitebg@2x.png" alt="logo">
-              </div>
-              <div class="col-2 offset-9">
-                  <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
-                      <div class="language" (click)="openlngMenu()">{{content.headerText.language}}<i class="icon-arrow"></i>
-                      </div>
-                      <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
-
-<!--                          asd-->
-                          <li #li (click)="chooseLanguage('ua')">{{content.headerText.languageOptions[0]}}</li>
-                          <li #li2 (click)="chooseLanguage('ru')">{{content.headerText.languageOptions[1]}}</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-  </header>
+  <app-header></app-header>
   <figure>
     <img src="/assets/images/mainCity.jpg" alt="mainPicture" #picture>
   </figure>
   <main class="mainContainer">
-    <div class="eclipse">
-      <section class="mission container" data-aos="flip-right" data-aos-easing="ease-out-cubic"
-        data-aos-duration="3000">
-            <div class="row" [innerHTML]="content.bannerText.mission"></div>
-      </section>
-    </div>
-    <div class="purposes">
-      <div class="container">
-        <div class="row">
-          <div class="purposeWrap col-5" *ngFor="let block of content.goalsText.blocks" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
-              <div class="border">
-                  <span>{{block}}</span>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <section class="eclipse aboutUs">
-      <div class="textWrapper">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-                <ul>
-                    <li *ngFor="let item of content.aboutUsText.blocks">{{item}}</li>
-                </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<app-purposes></app-purposes>
+<app-about></app-about>
   </main>
 </div>
