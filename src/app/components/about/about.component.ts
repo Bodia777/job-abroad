@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Text } from 'src/app/interfaces/language.interface';
+import { IAboutUsText } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { LanguageService } from 'src/app/services/language.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  public content: Text;
+  public aboutUsText: IAboutUsText;
 
   constructor(public languageService: LanguageService) { }
 
@@ -17,7 +17,9 @@ export class AboutComponent implements OnInit {
   }
 
   private subscLanguage(): void {
-    this.languageService.content.subscribe(value => this.content = value);
+    this.languageService.content.subscribe(({ aboutUsText }) => {
+        this.aboutUsText = aboutUsText
+    });
     this.languageService.changeLanguage();
 }
 }

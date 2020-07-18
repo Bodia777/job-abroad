@@ -1,0 +1,23 @@
+#banner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .imgWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .img {
+      background-image: url('/assets/images/banner.jpg');
+      background-size: cover;
+      position: fixed;
+      transition-property: top;
+      width: 100vw;
+      height: 50vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
+}

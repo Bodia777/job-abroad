@@ -1,83 +1,52 @@
-.header {
-    position: fixed;
+#header {
+    position: -webkit-sticky;
+    position: sticky;
     width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     background-color: white;
+    top: 0;
     z-index:999;
-    top: 0px;
-  
-    img{
-        height: 90px;
+
+    img {
+        height: 110px;
     }
-  
-    .dropMenu {
-      width: 150px;
-      position: relative;
-  
-      .icon-arrow{
-          &:hover{
-              display: none
-          }
-      }
-  
-      ul, li {
-        list-style-type: none;
-        background-color: white;
-        color: var(--blue);
-        border: 1px solid var(--blue);
+
+    .language {
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-end;
+      color: var(--blue);
+      vertical-align: middle;
+      margin-bottom: 0;
+      font-size: 16px;
+
+      li {
+        margin: 0 5px;
         &:hover{
             cursor: pointer;
         }
       }
-      li{
-          display: none;
-          &:hover{
-              background-color: black;
-              color: white;
-              cursor: pointer;
-          }
-      }
-  
-      .language {
-        width: 150px;
-        padding: 10px 40px;
-        height: 35px;
-        background-color: var(--blue);
-        color: white;
-        text-transform: uppercase;
-        &:hover{
-          cursor:pointer;
-        }
-      }
-      
-      .dropdown {
-          width: 150px;
-          height: 0px;
-          display: block;
-          color: white;
-          background: var(--blue);
-          position: absolute;
-          top: 34px;
-          text-transform: uppercase;
-          text-align: center;
-          transition-duration: .5s;
-          transition-property: height;
-          
-      }
-  
-      .icon-arrow {
-        position: absolute;
-        display: block;
-        font-size: 0.7em;
-        color: #fff;
-        top: 14px;
-        right: 10px;
-  
-        &:before {
-          content: '\25BC';
-        }
+
+      .active_language {
+        border-bottom: 1px solid var(--blue);
       }
     }
+
+  #navbar {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      color: #000;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .active {
+      background-color: transparent;
+      font-weight: 600;
+      border-radius: 0;
+      //color: var(--blue);
+      border-bottom: 2px solid var(--blue);
+    }
   }
+}

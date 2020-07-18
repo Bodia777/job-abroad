@@ -15,8 +15,14 @@ export class LanguageService {
     private contentContainer = {
         ua: {
             headerText: {
-                language: 'мова:',
-                languageOptions: ['українська', 'російська']
+                navigation: [{
+                    href: 'purposes',
+                    text: 'Цілі'
+                }, {
+                    href: 'about_us',
+                    text: 'Про Нас'
+                }],
+                languageOptions: ['UA', 'RU']
             },
             bannerText: {
                 mission: `<h1 class="h_class">Професійно, вчасно, надійно:</h1> <span>ми знаємо - таке</span> <h3>працевлаштування закордоном</h3> <span>можливе разом з нами.</span>`
@@ -42,8 +48,7 @@ export class LanguageService {
         },
         ru: {
             headerText: {
-                language: 'язык: RU',
-                languageOptions: ['украинский', 'русский']
+                languageOptions: ['UA', 'RU']
             },
             bannerText: {
                 mission: `<h1>Профессионально, в срок, надежно:</h1> <span>мы знаем - такое</span> <h3>трудоустройство за рубежом</h3> <span>возможно вместе с нами.</span>`
@@ -58,6 +63,6 @@ export class LanguageService {
     };
 
     public changeLanguage(language = 'ua'): void {
-        this.content.next(this.contentContainer[language]);
+        this.content.next(this.contentContainer[language.toLowerCase()]);
     }
 }

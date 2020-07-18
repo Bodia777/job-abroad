@@ -1,15 +1,15 @@
 import { Component, OnInit, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import * as AOS from 'aos';
-import { Text } from 'src/app/interfaces/language.interface';
+import { IBannerText } from "../../interfaces/language.interface";
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-banner',
+  templateUrl: './banner.component.html',
+  styleUrls: ['./banner.component.scss']
 })
-export class MainComponent implements OnInit {
-  public content: Text;
+export class BannerComponent implements OnInit {
+  public content: IBannerText;
   @ViewChild('picture', { static: false }) picture: ElementRef;
 
   constructor( private renderer: Renderer2, private languageService: LanguageService) {}
@@ -20,8 +20,9 @@ export class MainComponent implements OnInit {
   }
 
   private subscLanguage(): void {
-      this.languageService.content.subscribe(value => this.content = value);
-      this.languageService.changeLanguage();
+      this.languageService.content.subscribe(({ bannerText, goalsText }) => {
+          this.content = { bannerText, goalsText };
+      });
   }
 
   @HostListener('window:scroll', ['$event'])

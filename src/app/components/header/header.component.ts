@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
-import { Text } from 'src/app/interfaces/language.interface';
+import { IHeaderText } from 'src/app/interfaces/language.interface';
 
 
 @Component({
@@ -9,7 +9,8 @@ import { Text } from 'src/app/interfaces/language.interface';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public content: Text;
+  public headerText: IHeaderText;
+  public selectedLanguage: string = 'UA';
 
   @ViewChild('dropdown', { static: false }) dropdown: ElementRef;
   @ViewChild('li', { static: false }) dropdownItem: ElementRef;
@@ -21,27 +22,15 @@ export class HeaderComponent implements OnInit {
     this.subscLanguage();
   }
 
-  public openlngMenu(): void {
-    if (this.dropdownItem2.nativeElement.style.display === 'none') {
-      this.renderer.setStyle(this.dropdown.nativeElement, 'height', '40px');
-      this.renderer.setStyle(this.dropdownItem.nativeElement, 'display', 'block');
-      this.renderer.setStyle(this.dropdownItem2.nativeElement, 'display', 'block');
-    } else {
-      this.renderer.setStyle(this.dropdown.nativeElement, 'height', '0px');
-      this.renderer.setStyle(this.dropdownItem.nativeElement, 'display', 'none');
-      this.renderer.setStyle(this.dropdownItem2.nativeElement, 'display', 'none');
-    }
-  }
   public chooseLanguage(language): void {
+      this.selectedLanguage = language.toUpperCase();
       this.languageService.changeLanguage(language);
-      this.renderer.setStyle(this.dropdown.nativeElement, 'height', '0px');
-      this.renderer.setStyle(this.dropdownItem.nativeElement, 'display', 'none');
-      this.renderer.setStyle(this.dropdownItem2.nativeElement, 'display', 'none');
   }
-
 
   private subscLanguage(): void {
-    this.languageService.content.subscribe(value => this.content = value);
+    this.languageService.content.subscribe(({ headerText }) => {
+        this.headerText = headerText;
+    });
     this.languageService.changeLanguage();
-}
+  }
 }
