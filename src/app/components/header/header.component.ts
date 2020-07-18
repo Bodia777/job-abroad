@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { IHeaderText } from 'src/app/interfaces/language.interface';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 
 @Component({
@@ -11,6 +13,7 @@ import { IHeaderText } from 'src/app/interfaces/language.interface';
 export class HeaderComponent implements OnInit {
   public headerText: IHeaderText;
   public selectedLanguage: string = 'UA';
+  private unsubscribed = new Subject();
 
   @ViewChild('dropdown', { static: false }) dropdown: ElementRef;
   @ViewChild('li', { static: false }) dropdownItem: ElementRef;
@@ -28,9 +31,14 @@ export class HeaderComponent implements OnInit {
   }
 
   private subscLanguage(): void {
-    this.languageService.content.subscribe(({ headerText }) => {
-        this.headerText = headerText;
-    });
+    this.languageService.content$
+        .pipe(takeUntil(this.unsubscribed))
+        .subscribe(({ headerText }) => this.headerText = headerText);
     this.languageService.changeLanguage();
   }
+
+    ngOnDestroy(): void {
+        this.unsubscribed.next();
+        this.unsubscribed.complete();
+    }
 }

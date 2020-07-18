@@ -1,8 +1,9 @@
-import { Component, OnInit, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import * as AOS from 'aos';
-import { IBannerText } from "../../interfaces/language.interface";
-
+import { IBannerText } from 'src/app/interfaces/language.interface';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -11,6 +12,7 @@ import { IBannerText } from "../../interfaces/language.interface";
 export class BannerComponent implements OnInit {
   public content: IBannerText;
   @ViewChild('picture', { static: false }) picture: ElementRef;
+  private unsubscribed = new Subject();
 
   constructor( private renderer: Renderer2, private languageService: LanguageService) {}
 
@@ -19,8 +21,15 @@ export class BannerComponent implements OnInit {
     this.subscLanguage();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribed.next();
+    this.unsubscribed.complete();
+  }
+
   private subscLanguage(): void {
-      this.languageService.content.subscribe(({ bannerText, goalsText }) => {
+      this.languageService.content$
+          .pipe(takeUntil(this.unsubscribed))
+          .subscribe(({ bannerText, goalsText }) => {
           this.content = { bannerText, goalsText };
       });
   }

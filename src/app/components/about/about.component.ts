@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IAboutUsText } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
-
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
-  public aboutUsText: IAboutUsText;
+export class AboutComponent implements OnInit, OnDestroy {
+  public  aboutUsText: IAboutUsText | null;
+  private unsubscribed = new Subject();
 
   constructor(public languageService: LanguageService) { }
 
@@ -16,10 +18,14 @@ export class AboutComponent implements OnInit {
     this.subscLanguage();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribed.next();
+    this.unsubscribed.complete();
+  }
+
   private subscLanguage(): void {
-    this.languageService.content.subscribe(({ aboutUsText }) => {
-        this.aboutUsText = aboutUsText
-    });
-    this.languageService.changeLanguage();
+    this.languageService.content$
+    .pipe(takeUntil(this.unsubscribed))
+    .subscribe(({ aboutUsText }) => this.aboutUsText = aboutUsText);
 }
 }
