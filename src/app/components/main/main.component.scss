@@ -1,7 +1,6 @@
 .header {
   position: fixed;
   width: 100vw;
-  height: 85px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -10,10 +9,7 @@
   top: 0px;
 
   img{
-	  width: 132px;
 	  height: 90px;
-	  margin-top: 8px;
-	  margin-bottom: 15px;
   }
 
   .dropMenu {
@@ -114,7 +110,15 @@ figure{
 	align-items: center;
 }
 .mission{
-	height: 200px;
+
+  .h_class {
+    color: #c2185b;
+  }
+  height: 200px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px grey;
+  font-weight: 100;
+  font-size: 27px;
 	h2{
 		color: white;
 		font-size: 45px;
@@ -135,11 +139,16 @@ figure{
 		}
 	}
 	.purposes{
-		width: 100%;
-		height: 620px;
-		background-color: white;
-		padding-top: 50px;
-		text-align: center;
+      width: 100%;
+      height: 620px;
+      background-color: white;
+      padding-top: 50px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: space-around;
 
 		h3{
 			color: black;

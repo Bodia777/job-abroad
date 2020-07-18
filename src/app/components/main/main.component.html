@@ -1,13 +1,23 @@
 <div (scroll)="onScroll($event)">
   <header class="header">
-    <img src="/assets/logo/logo_original_whitebg@2x.png" alt="logo">
-    <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
-      <div class="language" (click)="openlngMenu()">{{language.headerText[0]}}<i class="icon-arrow"></i></div>
-      <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
-        <li #li (click)="chooseLanguage('ua')">{{language.headerText[1]}}</li>
-        <li #li2 (click)="chooseLanguage('ru')">{{language.headerText[2]}}</li>
-      </ul>
-    </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-1">
+                  <img src="/assets/logo/logo_original_whitebg@2x.png" alt="logo">
+              </div>
+              <div class="col-2 offset-9">
+                  <div class="dropMenu" data-aos="fade-left" (mouseleave)="chooseLanguage(null)">
+                      <div class="language" (click)="openlngMenu()">{{content.headerText.language}}<i class="icon-arrow"></i>
+                      </div>
+                      <ul class="dropdown" #dropdown (mouseleave)="chooseLanguage(null)">
+                          <li #li (click)="chooseLanguage('ua')">{{content.headerText.languageOptions[0]}}</li>
+                          <li #li2 (click)="chooseLanguage('ru')">{{content.headerText.languageOptions[1]}}</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
   </header>
   <figure>
     <img src="/assets/images/mainCity.jpg" alt="mainPicture" #picture>
@@ -16,47 +26,16 @@
     <div class="eclipse">
       <section class="mission container" data-aos="flip-right" data-aos-easing="ease-out-cubic"
         data-aos-duration="3000">
-        <div class="row">
-          <div class="col-12">
-            <div>
-              <h2>{{language.missionText[0]}}</h2>
-            </div>
-            <div>
-              <h3>{{language.missionText[1]}}</h3><span>{{language.missionText[2]}}</span>
-              <h1>{{language.missionText[3]}}</h1><span>{{language.missionText[4]}}</span>
-            </div>
-          </div>
-        </div>
+            <div class="row" [innerHTML]="content.bannerText.mission"></div>
       </section>
     </div>
     <div class="purposes">
-      <h3>{{language.purposesText[0]}}</h3>
       <div class="container">
         <div class="row">
-          <div class="purposeWrap col-5" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
-            <div class="border2">
-              <span>{{language.purposesText[1]}}</span>
-            </div>
-          </div>
-          <div class="purposeWrap2 col-5 offset-1" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="200">
-            <div class="border2">
-              <span>{{language.purposesText[2]}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="purposeWrap2 offset-1 col-5" data-aos="fade-up-right" data-aos-duration="1000"
-            data-aos-delay="300">
-            <div class="border2">
-              <span>{{language.purposesText[3]}}</span>
-            </div>
-          </div>
-          <div class="purposeWrap  offset-1 col-5" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="400">
-            <div class="border2">
-              <span>{{language.purposesText[4]}}</span>
-            </div>
+          <div class="purposeWrap col-5" *ngFor="let block of content.goalsText.blocks" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+              <div class="border">
+                  <span>{{block}}</span>
+              </div>
           </div>
         </div>
       </div>
@@ -66,12 +45,9 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h3>{{language.aboutUsTitle[0]}}</h3>
-            </div>
-            <div class="col-12">
-              <ul>
-                <li *ngFor="let item of language.aboutUs; let i=index">{{language.aboutUs[i]}}</li>
-              </ul>
+                <ul>
+                    <li *ngFor="let item of content.aboutUsText.blocks">{{item}}</li>
+                </ul>
             </div>
           </div>
         </div>

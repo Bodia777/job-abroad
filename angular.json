@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "job-abroad"
+  "defaultProject": "job-abroad",
+  "cli": {
+    "analytics": "bbca2a3d-a47a-41cb-819f-b423ec5dfed0"
+  }
 }

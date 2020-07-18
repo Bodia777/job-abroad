@@ -9,8 +9,7 @@ import { Text } from 'src/app/interfaces/language.interface';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public language: Text;
-
+  public content: Text;
 
   @ViewChild('dropdown', {
     static: false
@@ -30,8 +29,14 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    this.language = this.languageService.languageUkrainian;
+    this.subscLanguage();
   }
+
+  subscLanguage() {
+      this.languageService.content.subscribe(value => this.content = value);
+      this.languageService.changeLanguage();
+  }
+
   public openlngMenu(): void {
     if (this.dropdownItem2.nativeElement.style.display === 'none') {
       this.renderer.setStyle(this.dropdown.nativeElement, 'height', '40px');
@@ -44,12 +49,7 @@ export class MainComponent implements OnInit {
     }
   }
   public chooseLanguage(language): void {
-    if (language === 'ua') {
-      this.language = this.languageService.languageUkrainian;
-    }
-    if (language === 'ru') {
-      this.language = this.languageService.languageRussian;
-    }
+      this.languageService.changeLanguage(language);
     this.renderer.setStyle(this.dropdown.nativeElement, 'height', '0px');
     this.renderer.setStyle(this.dropdownItem.nativeElement, 'display', 'none');
     this.renderer.setStyle(this.dropdownItem2.nativeElement, 'display', 'none');

@@ -1,7 +1,15 @@
 export class Text {
-    headerText: string[];
-    missionText: string[];
-    purposesText: string[];
-    aboutUsTitle: string[];
-    aboutUs: string[];
+    headerText: {
+        language: string;
+        languageOptions: string[];
+    };
+    bannerText: {
+        mission: string;
+    };
+    goalsText: {
+        blocks: string[];
+    };
+    aboutUsText: {
+        blocks: string[];
+    }
 }
