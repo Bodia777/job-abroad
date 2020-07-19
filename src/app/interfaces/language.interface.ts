@@ -24,4 +24,5 @@ export interface Text {
         phoneLabel: string;
         textareaLabel: string;
     };
+    buttons: string[];
 }

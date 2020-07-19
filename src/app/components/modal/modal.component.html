@@ -24,8 +24,8 @@
         <small id="help3" class="form-text text-muted"></small>
   </div>
   <div class="dspl-flx-jstf-spc-rnd">
-      <button class="btn btn-primary" (click)="aproveForm()">Submit</button>
-      <button class="btn btn-outline-danger" (click)="cancel()">Cancel</button>
+      <button class="btn btn-primary" (click)="aproveForm()" [disabled]="connectionForm.invalid">{{content.buttons[1]}}</button>
+      <button class="btn btn-outline-danger" (click)="cancel()">{{content.buttons[2]}}</button>
     </div>
 </form>
 </div>

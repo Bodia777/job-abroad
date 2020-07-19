@@ -50,7 +50,8 @@ export class LanguageService {
                 emailLabel: 'Email-адреса',
                 phoneLabel: 'Телефон',
                 textareaLabel: 'Коментарі'
-            }
+            },
+            buttons: ['ЗАПОВНИТИ', 'ПІДТВЕРДИТИ', 'ВІДМІНИТИ']
         },
         ru: {
             headerText: {
@@ -77,7 +78,8 @@ export class LanguageService {
                 emailLabel: 'Email-адрес',
                 phoneLabel: 'Телефон',
                 textareaLabel: 'Коментарии'
-            }
+            },
+            buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА']
         }
     };
     public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);

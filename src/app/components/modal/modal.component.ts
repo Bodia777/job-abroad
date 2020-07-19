@@ -56,6 +56,8 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   public aproveForm(): void {
     this.serverConnectionService.postEmail(this.connectionForm.value);
+    this.connectionForm.reset();
+    this.modalRef.hide();
   }
 
   private createForm(): void {
