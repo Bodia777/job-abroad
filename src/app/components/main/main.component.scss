@@ -12,19 +12,7 @@ figure {
   }
 }
 
-.figure2 {
-  background-color: rgb(104, 95, 95);
-
-  img {
-    position: fixed;
-    z-index: -2;
-  }
-}
-
 .mainContainer {
   top: 85px;
   width: 100%;
-  position: relative;
-  z-index: 1;
-  height: 1200px;
 }

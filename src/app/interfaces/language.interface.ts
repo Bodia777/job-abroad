@@ -12,4 +12,5 @@ export interface Text {
     aboutUsText: {
         blocks: string[];
     };
+    connectionFormText: string;
 }

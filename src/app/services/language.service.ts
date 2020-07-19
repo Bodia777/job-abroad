@@ -38,7 +38,8 @@ export class LanguageService {
                     'Гарантуємо швидке та якісне виконання наших послуг',
                     'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
                 ]
-            }
+            },
+            connectionFormText: `<h2>ЗАПОВНІТЬ ФОРМУ</h2><h3> І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ</h3>`
         },
         ru: {
             headerText: {
@@ -53,7 +54,8 @@ export class LanguageService {
             },
             aboutUsText: {
                 blocks: []
-            }
+            },
+            connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`
         }
     };
     public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);
