@@ -13,4 +13,15 @@ export interface Text {
         blocks: string[];
     };
     connectionFormText: string;
+    modalMessage: {
+        requiredMessage: string;
+        patternMessage: string;
+        textareaMessage: string
+    };
+    modalLabel: {
+        nameLabel: string;
+        emailLabel: string;
+        phoneLabel: string;
+        textareaLabel: string;
+    };
 }

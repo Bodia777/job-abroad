@@ -27,7 +27,6 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   private subscLanguage(): void {
-    this.languageService.changeLanguage('ua');
     this.languageService.content$
     .pipe(takeUntil(this.unsubscribed))
     .subscribe((value: Text) => this.content = value);

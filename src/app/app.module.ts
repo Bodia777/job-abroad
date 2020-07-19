@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -26,6 +27,8 @@ import { ModalComponent } from './components/modal/modal.component';
     BrowserModule,
     BrowserAnimationsModule,
     ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
