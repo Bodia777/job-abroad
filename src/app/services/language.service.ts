@@ -44,7 +44,20 @@ export class LanguageService {
                     'Гарантуємо швидке та якісне виконання наших послуг',
                     'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
                 ]
-            }
+            },
+            connectionFormText: `<h2>ЗАПОВНІТЬ ФОРМУ</h2><h3> І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ</h3>`,
+            modalMessage: {
+                requiredMessage: 'Поле обов\'язкове для заповнення',
+                patternMessage: 'Поле заповнене неправильно',
+                textareaMessage: 'Коментарі щодо часу дзвінка, бажаної професії, та ін.'
+            },
+            modalLabel: {
+                nameLabel: 'Прізвище, ім\'я',
+                emailLabel: 'Email-адреса',
+                phoneLabel: 'Телефон',
+                textareaLabel: 'Коментарі'
+            },
+            buttons: ['ЗАПОВНИТИ', 'ПІДТВЕРДИТИ', 'ВІДМІНИТИ']
         },
         ru: {
             headerText: {
@@ -58,7 +71,20 @@ export class LanguageService {
             },
             aboutUsText: {
                 blocks: []
-            }
+            },
+            connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`,
+            modalMessage: {
+                requiredMessage: 'Поле обязательное для заполнения',
+                patternMessage: 'Поле заполнено неправильно',
+                textareaMessage: 'Коментарии касательно времени дзвонка, професии и др.'
+            },
+            modalLabel: {
+                nameLabel: 'Имя, фамилия',
+                emailLabel: 'Email-адрес',
+                phoneLabel: 'Телефон',
+                textareaLabel: 'Коментарии'
+            },
+            buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА']
         }
     };
     public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);
