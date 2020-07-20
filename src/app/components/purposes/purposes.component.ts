@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { IBannerText } from 'src/app/interfaces/language.interface';
+import { IGoalsText } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./purposes.component.scss']
 })
 export class PurposesComponent implements OnInit, OnDestroy {
-  public content: IBannerText | null;
+  public content: IGoalsText | null;
   private unsubscribed = new Subject();
 
   constructor(public languageService: LanguageService) { }
@@ -26,6 +26,6 @@ export class PurposesComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
     .pipe(takeUntil(this.unsubscribed))
-    .subscribe(({ bannerText, goalsText }) => this.content = { bannerText, goalsText });
+    .subscribe(({ goalsText}) => this.content = goalsText);
 }
 }

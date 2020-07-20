@@ -16,20 +16,23 @@ export interface IBannerText {
     bannerText: {
         mission: string;
     }
-    goalsText: {
-        blocks: string[];
-    };
+}
+
+export interface IGoalsText {
+    goalsTitle: string;
+    blocks: string[];
 }
 
 export interface Text {
     headerText: {
-        language: string;
+        navigation: INavigation[];
         languageOptions: string[];
     };
     bannerText: {
         mission: string;
     };
     goalsText: {
+        goalsTitle: string;
         blocks: string[];
     };
     aboutUsText: {

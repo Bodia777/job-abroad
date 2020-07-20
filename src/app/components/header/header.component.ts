@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
     this.languageService.content$
         .pipe(takeUntil(this.unsubscribed))
         .subscribe(({ headerText }) => this.headerText = headerText);
-    this.languageService.changeLanguage();
+    // this.languageService.changeLanguage();
   }
 
     ngOnDestroy(): void {

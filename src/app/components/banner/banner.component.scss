@@ -3,21 +3,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(90deg, #fff 50%, transparent 100%);
+
 
   .imgWrapper {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
 
     .img {
       background-image: url('/assets/images/banner.jpg');
       background-size: cover;
       position: fixed;
       transition-property: top;
-      width: 100vw;
+      width: 50vw;
       height: 50vh;
       object-fit: cover;
       z-index: -1;
     }
+  }
+
+  .mission {
+    height: 50vh;
+    font-size: 18px;
+
+    .row {
+      height: 100%;
+
+      ::ng-deep h2 {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .mission ::ng-deep h2 {
+    font-weight: 600;
+    font-size: 55px;
+    margin-bottom: 24px;
+  }
+  .mission ::ng-deep span {
+    font-size: 20px;
   }
 }

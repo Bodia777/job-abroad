@@ -2,8 +2,10 @@
     <div class="imgWrapper">
         <div class="img" src="/assets/images/banner.jpg" alt="mainPicture" #picture></div>
     </div>
-    <div class="mission container" data-aos="flip-right" data-aos-easing="ease-out-cubic"
-         data-aos-duration="3000">
-        <div class="row" [innerHTML]="content.bannerText.mission"></div>
+    <div class="mission container">
+        <div class="row align-items-center">
+            <div class="col-7" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
+                 [innerHTML]="content.bannerText.mission"></div>
+        </div>
     </div>
 </section>

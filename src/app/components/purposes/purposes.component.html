@@ -1,12 +1,11 @@
     <div id="purposes">
       <div class="container">
         <div class="row">
-          <div class="purposeWrap col-5" *ngFor="let block of content.goalsText.blocks" data-aos="fade-right"
-            data-aos-duration="1000" data-aos-delay="100">
-            <div class="border">
-              <span>{{block}}</span>
-            </div>
-          </div>
+          <ul class="col">{{content.goalsTitle}}
+            <li data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
+                 *ngFor="let block of content.blocks" [innerHTML]="block" >
+            </li>
+          </ul>
         </div>
       </div>
     </div>

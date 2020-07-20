@@ -29,8 +29,8 @@ export class BannerComponent implements OnInit {
   private subscLanguage(): void {
       this.languageService.content$
           .pipe(takeUntil(this.unsubscribed))
-          .subscribe(({ bannerText, goalsText }) => {
-          this.content = { bannerText, goalsText };
+          .subscribe(({ bannerText}) => {
+          this.content = { bannerText };
       });
   }
 
