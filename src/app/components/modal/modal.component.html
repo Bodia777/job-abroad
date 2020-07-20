@@ -13,8 +13,8 @@
     <small id="help1" class="form-text text-muted warning">{{getErrorMessage('email', regExpForEmail)}}</small>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">{{content.modalLabel.phoneLabel}}</label>
-    <input type="text" formControlName="phone" class="form-control" id="exampleInputPassword1" required [pattern]="regExpForPhone">
+    <label for="exampleInputPassword1">{{content.modalLabel.phoneLabel}} формат +380ХХ-ХХХ-ХХ-ХХ</label>
+    <input type="text" formControlName="phone" class="form-control" id="exampleInputPassword1" (keyup)="addRequiredFormatToNumber($event)" required [pattern]="regExpForPhone">
     <small id="help2" class="form-text text-muted warning">{{getErrorMessage('phone', regExpForPhone)}}</small>
   </div>
   <div class="form-group">
