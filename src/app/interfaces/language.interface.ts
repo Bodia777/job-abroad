@@ -18,9 +18,7 @@ export interface IHeaderText {
 }
 
 export interface IBannerText {
-    bannerText: {
-        mission: string;
-    }
+    mission: string;
 }
 
 export interface IGoalsText {
@@ -28,21 +26,17 @@ export interface IGoalsText {
     blocks: string[];
 }
 
+export interface IPartners {
+        title: string;
+        partnersList: string[];
+}
+
 export interface Text {
-    headerText: {
-        navigation: INavigation[];
-        languageOptions: string[];
-    };
-    bannerText: {
-        mission: string;
-    };
-    goalsText: {
-        goalsTitle: string;
-        blocks: string[];
-    };
-    aboutUsText: {
-        blocks: IAboutUsBlock[];
-    };
+    headerText: IHeaderText;
+    bannerText: IBannerText;
+    goalsText: IGoalsText;
+    aboutUsText: IAboutUsText;
+    partners: IPartners;
     connectionFormText: string;
     modalMessage: {
         requiredMessage: string;

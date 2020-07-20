@@ -18,15 +18,15 @@ export class LanguageService {
                 navigation: [{
                     href: 'mission',
                     text: 'Місія'
-                },{
+                }, {
                     href: 'purposes',
                     text: 'Цілі'
                 }, {
                     href: 'about_us',
                     text: 'Про Нас'
                 }, {
-                    href: 'block_4',
-                    text: 'Блок 4'
+                    href: 'partners',
+                    text: 'Партнери'
                 }, {
                     href: 'block_5',
                     text: 'Блок 5'
@@ -50,24 +50,30 @@ export class LanguageService {
             },
             aboutUsText: {
                 blocks: [{
-                    icon: '/assets/icon/poland.svg',
+                    icon: '/assets/icon/002-portfolio.svg',
                     text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
                 }, {
-                    icon: '/assets/icon/poland.svg',
-                    text:  'Індивідуальний підхід до кожного',
+                    icon: '/assets/icon/001-network.svg',
+                    text: 'Індивідуальний підхід до кожного клієнта',
                 }, {
-                    icon: '/assets/icon/poland.svg',
+                    icon: '/assets/icon/003-trust.svg',
+                    text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
+                },  {
+                    icon: '/assets/icon/006-support.svg',
                     text: 'Консультуємо при підборі вакансії та допомагаємо грамотно оформити усі необхідні документи',
                 }, {
-                    icon: '/assets/icon/poland.svg',
-                    text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
-                }, {
-                    icon: '/assets/icon/poland.svg',
+                    icon: '/assets/icon/004-star.svg',
                     text: 'Гарантуємо швидке та якісне виконання наших послуг',
                 }, {
-                    icon: '/assets/icon/poland.svg',
+                    icon: '/assets/icon/005-file.svg',
                     text: 'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
                 }]
+            },
+            partners: {
+                title: 'Наші партнери, яким ми довіряємо',
+                partnersList: [
+                    'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
+                ]
             },
             connectionFormText: `<h2>ЗАПОВНІТЬ ФОРМУ</h2><h3> І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ</h3>`,
             modalMessage: {
@@ -85,49 +91,76 @@ export class LanguageService {
         },
         ru: {
             headerText: {
-                languageOptions: ['UA', 'RU']
-            },
-            bannerText: {
-                mission: `<h2 style="font-weight: 600">Профессионально. <br> В срок. <br> Надежно. </h2> <span style="font-size: 24px">Мы знаем - такое трудоустройство <br> за рубежом возможно вместе с нами.</span>`
-            },
-            goalsText: {
-                goalsTitle: 'НАШИ ЦЕЛИ:',
-                blocks: []
-            },
-            aboutUsText: {
-                blocks: [{
-                    icon: '/assets/icon/poland.svg',
-                    text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
-                }, {
-                    icon: '/assets/icon/poland.svg',
-                    text:  'Індивідуальний підхід до кожного',
-                }, {
-                    icon: '/assets/icon/poland.svg',
-                    text: 'Консультуємо при підборі вакансії та допомагаємо грамотно оформити усі необхідні документи',
-                }, {
-                    icon: '/assets/icon/poland.svg',
-                    text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
-                }, {
-                    icon: '/assets/icon/poland.svg',
-                    text: 'Гарантуємо швидке та якісне виконання наших послуг',
-                }, {
-                    icon: '/assets/icon/poland.svg',
-                    text: 'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
-                }]
-            },
-            connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`,
-            modalMessage: {
-                requiredMessage: 'Поле обязательное для заполнения',
-                patternMessage: 'Поле заполнено неправильно',
-                textareaMessage: 'Коментарии касательно времени дзвонка, професии и др.'
-            },
-            modalLabel: {
-                nameLabel: 'Имя, фамилия',
-                emailLabel: 'Email-адрес',
-                phoneLabel: 'Телефон',
-                textareaLabel: 'Коментарии'
-            },
-            buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА']
+                headerText: {
+                    navigation: [{
+                        href: 'mission',
+                        text: 'Миссия'
+                    }, {
+                        href: 'purposes',
+                        text: 'Цели'
+                    }, {
+                        href: 'about_us',
+                        text: 'О Нас'
+                    }, {
+                        href: 'partners',
+                        text: 'Партнеры'
+                    }, {
+                        href: 'block_5',
+                        text: 'Блок 5'
+                    }, {
+                        href: 'block_6',
+                        text: 'Блок 6'
+                    }],
+                    languageOptions: ['UA', 'RU']
+                },
+                bannerText: {
+                    mission: `<h2 style="font-weight: 600">Профессионально. <br> В срок. <br> Надежно. </h2> <span style="font-size: 24px">Мы знаем - такое трудоустройство <br> за рубежом возможно вместе с нами.</span>`
+                },
+                goalsText: {
+                    goalsTitle: 'НАШИ ЦЕЛИ:',
+                    blocks: []
+                },
+                aboutUsText: {
+                    blocks: [{
+                        icon: '/assets/icon/poland.svg',
+                        text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
+                    }, {
+                        icon: '/assets/icon/poland.svg',
+                        text: 'Індивідуальний підхід до кожного',
+                    }, {
+                        icon: '/assets/icon/poland.svg',
+                        text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
+                    }, {
+                        icon: '/assets/icon/poland.svg',
+                        text: 'Консультуємо при підборі вакансії та допомагаємо грамотно оформити усі необхідні документи',
+                    }, {
+                        icon: '/assets/icon/poland.svg',
+                        text: 'Гарантуємо швидке та якісне виконання наших послуг',
+                    }, {
+                        icon: '/assets/icon/poland.svg',
+                        text: 'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
+                    }]
+                },
+                partners: {
+                    title: 'Наші партнери, яким ми довіряємо',
+                    partnersList: [
+                        'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
+                    ]
+                },
+                connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`,
+                modalMessage: {
+                    requiredMessage: 'Поле обязательное для заполнения',
+                    patternMessage: 'Поле заполнено неправильно',
+                    textareaMessage: 'Коментарии касательно времени дзвонка, професии и др.'
+                },
+                modalLabel: {
+                    nameLabel: 'Имя, фамилия',
+                    emailLabel: 'Email-адрес',
+                    phoneLabel: 'Телефон',
+                    textareaLabel: 'Коментарии'
+                },
+                buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА']
+            }
         }
     };
     public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);

@@ -13,6 +13,7 @@ import { PurposesComponent } from './components/purposes/purposes.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { PartnersComponent } from './components/partners/partners.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModalComponent } from './components/modal/modal.component';
     PurposesComponent,
     AboutComponent,
     FooterComponent,
-    ModalComponent
+    ModalComponent,
+    PartnersComponent
   ],
   imports: [
     BrowserModule,

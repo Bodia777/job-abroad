@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { IHeaderText } from 'src/app/interfaces/language.interface';
 import { Subject } from 'rxjs';
@@ -10,16 +10,12 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   public headerText: IHeaderText;
   public selectedLanguage: string = 'UA';
   private unsubscribed = new Subject();
 
-  @ViewChild('dropdown', { static: false }) dropdown: ElementRef;
-  @ViewChild('li', { static: false }) dropdownItem: ElementRef;
-  @ViewChild('li2', { static: false }) dropdownItem2: ElementRef;
-
-  constructor(private renderer: Renderer2, private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
     this.subscLanguage();
