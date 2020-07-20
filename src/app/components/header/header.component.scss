@@ -35,6 +35,10 @@
     display: flex;
     justify-content: flex-end;
 
+    .nav-link{
+      padding-bottom: .25rem;
+    }
+
     a {
       color: #000;
       font-size: 16px;

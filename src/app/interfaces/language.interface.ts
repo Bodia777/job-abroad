@@ -1,10 +1,15 @@
-export interface IAboutUsText {
-    blocks: string[];
-}
-
 interface INavigation {
     href: string,
     text: string
+}
+
+interface IAboutUsBlock {
+    icon: string,
+    text: string
+}
+
+export interface IAboutUsText {
+    blocks: IAboutUsBlock[];
 }
 
 export interface IHeaderText {
@@ -36,7 +41,7 @@ export interface Text {
         blocks: string[];
     };
     aboutUsText: {
-        blocks: string[];
+        blocks: IAboutUsBlock[];
     };
     connectionFormText: string;
     modalMessage: {

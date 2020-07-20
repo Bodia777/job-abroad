@@ -1,13 +1,16 @@
 <section id="about_us" class="eclipse">
-    <div class="textWrapper">
+    <div class="wrapper">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <ul>
-              <li *ngFor="let item of aboutUsText.blocks">{{item}}</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="row">
+          <li class="col-4" *ngFor="let item of aboutUsText.blocks">
+            <div data-aos="fade-zoom-in" class="card">
+              <img class="card-img-top" src="{{item.icon}}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">{{item.text}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
