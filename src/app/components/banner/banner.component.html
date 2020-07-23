@@ -3,21 +3,13 @@
         <div class="img" src="/assets/images/banner.jpg" alt="mainPicture" #picture></div>
     </div>
     <div class="mission container" id="mission">
-        <div class="row align-items-center">
-            <div class="col-7" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
-                 [innerHTML]="content.mission"></div>
-        </div>
-        <div>
-            <button class="btn btn-primary btn-lg oval" type="button" data-toggle="modal" data-target="#exampleModal">{{content.bannerButton}}</button>
+        <div class="row align-items-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+            <div class="col-7" [innerHTML]="content.mission"></div>
+            <div class="col-5"></div>
+            <div class="col">
+                <button class="btn btn-primary btn-lg button button_primary" type="button" data-toggle="modal" data-target="#modal">{{content.bannerButton}}</button>
+            </div>
         </div>
     </div>
 </section>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-            <app-modal></app-modal>
-        </div>
-      </div>
-    </div>
-  </div>
+<app-modal></app-modal>
