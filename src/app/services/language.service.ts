@@ -76,7 +76,7 @@ export class LanguageService {
                     'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
                 ]
             },
-            modalTitle: 'ЗАПОВНІТЬ ФОРМУ І МИ ЗВ\'ЯЖЕМОСЬ З ВАМИ',
+            modalTitle: `Заповніть форму і ми зв'яжемось з Вами`,
             modalMessage: {
                 requiredMessage: 'Поле обов\'язкове для заповнення',
                 patternMessage: 'Поле заповнене неправильно',
@@ -153,7 +153,7 @@ export class LanguageService {
                     ]
                 },
                 connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`,
-                modalTitle: 'ЗАПОЛНИТЕ ФОРМУ И МЫ СВЯЖЕМСЯ С ВАМИ',
+                modalTitle: 'Заполните форму и мы свяжемся с Вами.',
                 modalMessage: {
                     requiredMessage: 'Поле обязательное для заполнения',
                     patternMessage: 'Поле заполнено неправильно',

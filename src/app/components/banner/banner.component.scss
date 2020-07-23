@@ -29,12 +29,15 @@
 
     .row {
       height: 100%;
-      margin-top: -36px;
 
       ::ng-deep h2 {
         font-weight: 600;
       }
     }
+  }
+
+  .button_primary {
+    margin-top: -55px;
   }
 
   .mission ::ng-deep h2 {
@@ -43,11 +46,5 @@
   }
   .mission ::ng-deep span {
     font-size: 20px;
-  }
-  .oval{
-    margin-top: -15px;
-    border-radius: 100px 100px 100px 100px;
-    background-color: var(--blue);
-    border: none;
   }
 }
