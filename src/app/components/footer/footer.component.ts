@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Text } from 'src/app/interfaces/language.interface';
+import { Text, IFooter } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 
 export class FooterComponent implements OnInit, OnDestroy {
-  public content: Text | null;
+  public content: IFooter;
   private unsubscribed = new Subject();
 
   constructor(public languageService: LanguageService) { }
@@ -28,6 +28,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
     .pipe(takeUntil(this.unsubscribed))
-    .subscribe((value: Text) => this.content = value);
+    .subscribe((value: Text) => this.content = value.footer);
 }
 }
