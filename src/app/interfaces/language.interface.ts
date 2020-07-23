@@ -1,11 +1,11 @@
 interface INavigation {
-    href: string,
-    text: string
+    href: string;
+    text: string;
 }
 
 interface IAboutUsBlock {
-    icon: string,
-    text: string
+    icon: string;
+    text: string;
 }
 
 export interface IAboutUsText {
@@ -32,6 +32,11 @@ export interface IPartners {
         partnersList: string[];
 }
 
+export interface IFooter {
+    contacts: string[];
+    companyName: string;
+}
+
 export interface Text {
     headerText: IHeaderText;
     bannerText: IBannerText;
@@ -51,4 +56,5 @@ export interface Text {
         textareaLabel: string;
     };
     buttons: string[];
+    footer: IFooter;
 }
