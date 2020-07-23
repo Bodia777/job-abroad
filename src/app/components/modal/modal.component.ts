@@ -1,32 +1,10 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy
-} from '@angular/core';
-import {
-  BsModalRef,
-  BsModalService
-} from 'ngx-bootstrap/modal';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators
-} from '@angular/forms';
-import {
-  Text
-} from 'src/app/interfaces/language.interface';
-import {
-  LanguageService
-} from 'src/app/services/language.service';
-import {
-  ServerConnectionService
-} from 'src/app/services/server-connection.service';
-import {
-  Subject
-} from 'rxjs';
-import {
-  takeUntil
-} from 'rxjs/operators';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Text } from 'src/app/interfaces/language.interface';
+import { LanguageService } from 'src/app/services/language.service';
+import { ServerConnectionService } from 'src/app/services/server-connection.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-modal',
@@ -34,17 +12,17 @@ import {
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  public content: Text | null;
+  public content: any;
   private unsubscribed = new Subject();
-  public regExpForName = /^([^\s]+)([\s]*)([^\s]*)$/;
+  public regExpForName = /^([^\s]+)([\s]*)([^\s]*)([\s]*)([^\s]*)$/;
   public regExpForEmail = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z]{2,4})$/i;
   public regExpForPhone = /^(\+38-0([1-9])([0-9])-([0-9]{3})-([0-9]{2})-([0-9]{2}))$/;
   public connectionForm: FormGroup;
 
 
   constructor(
-    private fb: FormBuilder, public modalRef: BsModalRef, private serverConnectionService: ServerConnectionService,
-    private modalService: BsModalService, private languageService: LanguageService
+    private fb: FormBuilder, private serverConnectionService: ServerConnectionService,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit(): void {
@@ -57,9 +35,12 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.unsubscribed.complete();
   }
 
-  public cancel(): void {
-    this.connectionForm.reset();
-    this.modalRef.hide();
+  public aproveForm(): void {
+     this.serverConnectionService.postEmail(this.connectionForm.value);
+     const timeOut = setTimeout(() => {
+     this.connectionForm.reset();
+     clearTimeout(timeOut);
+   });
   }
 
   public getErrorMessage(formControl, regExp): string | null {
@@ -75,10 +56,8 @@ export class ModalComponent implements OnInit, OnDestroy {
     }
   }
 
-  public aproveForm(): void {
-    this.serverConnectionService.postEmail(this.connectionForm.value);
+  public cancel(): void {
     this.connectionForm.reset();
-    this.modalRef.hide();
   }
 
   private createForm(): void {
@@ -93,12 +72,14 @@ export class ModalComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
       .pipe(takeUntil(this.unsubscribed))
-      .subscribe((value: Text) => this.content = value);
+      .subscribe((value: Text) => {
+        this.content = value;
+      });
   }
 
   public addRequiredFormatToNumber(event): void {
     const phoneNumber = this.connectionForm.controls.phone;
-    if (phoneNumber.value.length < 5) {
+    if (!phoneNumber.value || phoneNumber.value.length < 5) {
       phoneNumber.setValue('+38-0');
     }
     if (phoneNumber.value.length >= 5 && phoneNumber.value.slice(0, 5) !== '+38-0') {

@@ -18,6 +18,7 @@ export interface IHeaderText {
 }
 
 export interface IBannerText {
+    bannerButton: string;
     mission: string;
 }
 
@@ -37,7 +38,7 @@ export interface Text {
     goalsText: IGoalsText;
     aboutUsText: IAboutUsText;
     partners: IPartners;
-    connectionFormText: string;
+    modalTitle: string;
     modalMessage: {
         requiredMessage: string;
         patternMessage: string;

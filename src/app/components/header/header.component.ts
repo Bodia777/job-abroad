@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
-import { IHeaderText } from 'src/app/interfaces/language.interface';
+import { IHeaderText, Text } from 'src/app/interfaces/language.interface';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -12,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   public headerText: IHeaderText;
-  public selectedLanguage: string = 'UA';
+  public selectedLanguage = 'UA';
   private unsubscribed = new Subject();
 
   constructor(private languageService: LanguageService) { }
@@ -29,8 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
         .pipe(takeUntil(this.unsubscribed))
-        .subscribe(({ headerText }) => this.headerText = headerText);
-    // this.languageService.changeLanguage();
+        .subscribe((text: Text) => this.headerText = text.headerText);
   }
 
     ngOnDestroy(): void {

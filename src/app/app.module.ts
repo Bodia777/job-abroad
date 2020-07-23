@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ModalModule } from 'ngx-bootstrap/modal';
-
 import { AppComponent } from './app.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +27,6 @@ import { PartnersComponent } from './components/partners/partners.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule

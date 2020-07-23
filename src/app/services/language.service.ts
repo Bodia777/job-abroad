@@ -37,6 +37,7 @@ export class LanguageService {
                 languageOptions: ['UA', 'RU']
             },
             bannerText: {
+                bannerButton: 'Зв\'язатись з нами',
                 mission: `<h2>Професійно. <br> Вчасно. <br> Надійно. </h2> <span>Ми знаємо - таке працевлаштування  <br>закордоном можливе разом з нами.</span>`
             },
             goalsText: {
@@ -75,7 +76,7 @@ export class LanguageService {
                     'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
                 ]
             },
-            connectionFormText: `<h2>ЗАПОВНІТЬ ФОРМУ</h2><h3> І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ</h3>`,
+            modalTitle: 'ЗАПОВНІТЬ ФОРМУ І МИ ЗВ\'ЯЖЕМОСЬ З ВАМИ',
             modalMessage: {
                 requiredMessage: 'Поле обов\'язкове для заповнення',
                 patternMessage: 'Поле заповнене неправильно',
@@ -91,7 +92,6 @@ export class LanguageService {
         },
         ru: {
             headerText: {
-                headerText: {
                     navigation: [{
                         href: 'mission',
                         text: 'Миссия'
@@ -114,6 +114,7 @@ export class LanguageService {
                     languageOptions: ['UA', 'RU']
                 },
                 bannerText: {
+                    bannerButton: 'Свяжитесь с нами',
                     mission: `<h2 style="font-weight: 600">Профессионально. <br> В срок. <br> Надежно. </h2> <span style="font-size: 24px">Мы знаем - такое трудоустройство <br> за рубежом возможно вместе с нами.</span>`
                 },
                 goalsText: {
@@ -122,22 +123,22 @@ export class LanguageService {
                 },
                 aboutUsText: {
                     blocks: [{
-                        icon: '/assets/icon/poland.svg',
+                        icon: '/assets/icon/002-portfolio.svg',
                         text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
                     }, {
-                        icon: '/assets/icon/poland.svg',
-                        text: 'Індивідуальний підхід до кожного',
+                        icon: '/assets/icon/001-network.svg',
+                        text: 'Індивідуальний підхід до кожного клієнта',
                     }, {
-                        icon: '/assets/icon/poland.svg',
+                        icon: '/assets/icon/003-trust.svg',
                         text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
-                    }, {
-                        icon: '/assets/icon/poland.svg',
+                    },  {
+                        icon: '/assets/icon/006-support.svg',
                         text: 'Консультуємо при підборі вакансії та допомагаємо грамотно оформити усі необхідні документи',
                     }, {
-                        icon: '/assets/icon/poland.svg',
+                        icon: '/assets/icon/004-star.svg',
                         text: 'Гарантуємо швидке та якісне виконання наших послуг',
                     }, {
-                        icon: '/assets/icon/poland.svg',
+                        icon: '/assets/icon/005-file.svg',
                         text: 'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
                     }]
                 },
@@ -148,6 +149,7 @@ export class LanguageService {
                     ]
                 },
                 connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`,
+                modalTitle: 'ЗАПОЛНИТЕ ФОРМУ И МЫ СВЯЖЕМСЯ С ВАМИ',
                 modalMessage: {
                     requiredMessage: 'Поле обязательное для заполнения',
                     patternMessage: 'Поле заполнено неправильно',
@@ -161,11 +163,10 @@ export class LanguageService {
                 },
                 buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА']
             }
-        }
     };
     public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);
 
-    public changeLanguage(language = 'ua'): void {
-        this.content$.next(this.contentContainer[language]);
+    public changeLanguage(language): void {
+        this.content$.next(this.contentContainer[language.toLowerCase()]);
     }
 }
