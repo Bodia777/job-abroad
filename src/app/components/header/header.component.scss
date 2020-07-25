@@ -1,41 +1,58 @@
 #header {
-    position: -webkit-sticky;
-    position: sticky;
-    width: 100vw;
-    background-color: white;
-    top: 0;
-    z-index:999;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100vw;
+  background-color: white;
+  top: 0;
+  z-index: 999;
+
+  img {
+    height: 110px;
+  }
+
+  .menuIconWrapper {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: none;
 
     img {
-        height: 110px;
+      width: 50px;
+      height: 50px;
     }
+  }
 
-    .language {
-      list-style-type: none;
-      display: flex;
-      justify-content: flex-end;
-      color: var(--blue);
-      vertical-align: middle;
-      margin-bottom: 0;
-      font-size: 16px;
+  .language {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--blue);
+    vertical-align: middle;
+    margin-bottom: 0;
+    font-size: 16px;
 
-      li {
-        margin: 0 5px;
-        &:hover{
-            cursor: pointer;
-        }
-      }
+    li {
+      margin: 0 5px;
 
-      .active_language {
-        border-bottom: 2px solid var(--blue);
+      &:hover {
+        cursor: pointer;
       }
     }
+
+    .active_language {
+      border-bottom: 2px solid var(--blue);
+    }
+  }
 
   #navbar {
     display: flex;
     justify-content: flex-end;
 
-    .nav-link{
+    .navbar {
+      display: block;
+    }
+
+    .nav-link {
       padding-bottom: .25rem;
     }
 
@@ -50,6 +67,66 @@
       font-weight: 600;
       border-radius: 0;
       border-bottom: 2px solid var(--blue);
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #header {
+    #navbar {
+      .nav-link {
+        padding: 0.5rem 0.5rem;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 762px) {
+  #header {
+    #navbar {
+      .navbar {
+        margin-top: -30px;
+        border-top: 1px solid var(--blue);
+        border-bottom: 1px solid var(--blue);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #header {
+    .menuIconWrapper {
+      margin-right: 50px;
+      display: block;
+    }
+
+    #navbar {
+      .nav {
+        display: block;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 81px;
+        left: -95px;
+        width: 137px;
+        border: none;
+        background-color: #3d5161;
+        display: none;
+
+        .nav-link {
+          color: white;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 430px) {
+  #header {
+    .menuIconWrapper {
+      margin-right: 10px;
+      display: block;
     }
   }
 }

@@ -91,7 +91,8 @@ export class LanguageService {
             buttons: ['ЗАПОВНИТИ', 'ПІДТВЕРДИТИ', 'ВІДМІНИТИ'],
             footer: {
                 contacts: ['097 23 00 202', '099 23 00 202', 'ukrprowork@gmail.com', 'м. Львів, вул. Зелена, 81'],
-                companyName: 'ТОВ "ПРОФЕСІЙНА АГЕНЦІЯ ПРАЦІ"'
+                companyName: 'ТОВ "ПРОФЕСІЙНА АГЕНЦІЯ ПРАЦІ"',
+                footerButton: 'Зв\'язатись з нами'
             }
         },
         ru: {
@@ -167,6 +168,7 @@ export class LanguageService {
                 },
                 buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА'],
                 footer: {
+                    footerButton: 'Свяжитесь с нами',
                     contacts: ['097 23 00 202', '099 23 00 202', 'ukrprowork@gmail.com', 'г. Львов, ул. Зеленая, 81'],
                     companyName: 'ООО "ПРОФЕССИОНАЛЬНОЕ АГЕНСТВО ТРУДА"'
                 }

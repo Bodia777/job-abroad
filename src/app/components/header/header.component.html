@@ -1,11 +1,12 @@
 <header id="header">
     <div class="container">
         <div class="row align-items-center">
-            <a class="col-1" href="#">
+            <a class="col-xl-1 col-lg-1 col-md-1 col-sm-9 col-4" href="#">
                 <img src="/assets/logo/logo.svg" alt="logo">
             </a>
-            <div class="col-7 offset-1" id="navbar">
-                <nav class="navbar navbar-light">
+            <div class="col-xl-7 offset-xl-1 col-lg-8 offset-lg-1 col-md-9 offset-md-0 order-md-2 col-sm-11 offset-sm-1 order-sm-3 col-1 offset-2 order-3" id="navbar">
+                <div class="menuIconWrapper" (click)="togleMenu()"><img src="/assets/icon/menu-black.svg" alt=""></div>
+                <nav class="navbar navbar-light" #navbar>
                     <ul class="nav nav-pills">
                         <li class="nav-item" *ngFor="let item of headerText.navigation">
                             <a class="nav-link" href="#{{item.href}}">{{item.text.toUpperCase()}}</a>
@@ -14,7 +15,7 @@
 
                 </nav>
             </div>
-            <div class="col-2 offset-1">
+            <div class="col-xl-2 offset-xl-1 col-lg-2 offset-lg-0 col-md-1 order-md-3 offset-md-0 col-sm-1 order-sm-2 col-3 offset-2 order-2">
                 <ul class="language">
                     <li *ngFor="let option of headerText.languageOptions"
                         (click)="chooseLanguage(option)"

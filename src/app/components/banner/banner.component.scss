@@ -1,9 +1,9 @@
-#banner{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, #fff 50%, transparent 100%);
+#banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #fff 50%, transparent 100%);
 
 
   .imgWrapper {
@@ -44,7 +44,43 @@
     font-weight: 600;
     font-size: 55px;
   }
+
   .mission ::ng-deep span {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #banner {
+    .button_primary {
+      margin-top: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 762px) {
+  #banner {
+    height: 400px;
+
+    .imgWrapper {
+      top: 70px;
+
+      .img {
+        margin-top: -100px;
+        height: 74vh;
+      }
+    }
+
+    .button_primary {
+      margin-top: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #banner {
+    .row {
+      margin-top: -51px;
+    }
   }
 }
