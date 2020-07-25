@@ -30,8 +30,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public togleMenu(): void {
     const value = getComputedStyle(this.navbar.nativeElement).getPropertyValue('display');
     if (value === 'none') {
+      this.renderer.setStyle(this.navbar.nativeElement.previousElementSibling, 'backgroundColor', 'rgb(223, 219, 219)');
       this.renderer.setStyle(this.navbar.nativeElement, 'display', 'block');
     } else {
+      this.renderer.setStyle(this.navbar.nativeElement.previousElementSibling, 'backgroundColor', 'rgb(255, 255, 255)');
       this.renderer.setStyle(this.navbar.nativeElement, 'display', 'none');
     }
   }

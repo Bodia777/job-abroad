@@ -6,7 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
+  styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit, OnDestroy {
   public content: IBannerText;
@@ -15,7 +15,6 @@ export class BannerComponent implements OnInit, OnDestroy {
   constructor( private languageService: LanguageService) {}
 
   ngOnInit(): void {
-
     this.subscLanguage();
   }
 

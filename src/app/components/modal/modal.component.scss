@@ -15,8 +15,8 @@
     }
 
 
-    .container{
-      .form-control{
+    .container {
+      .form-control {
         border: none;
         outline: none;
         border-bottom: 2px solid var(--blue);
@@ -37,5 +37,50 @@
       }
     }
   }
+
+  textarea {
+    resize: none;
+  }
 }
 
+@media screen and (max-width: 1400px) {
+  #modal {
+    margin-top: 0%;
+
+    .modal-body {
+      padding: 30px 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #modal .modal-content {
+    width: 102%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #modal {
+    .modal-body {
+      .container {
+        .button {
+          width: 48%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #modal {
+    .modal-body {
+      .container {
+        .button {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

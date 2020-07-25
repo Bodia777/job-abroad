@@ -76,11 +76,35 @@
     }
   }
 }
+@media screen and (max-width: 540px) {
+  #banner {
+    .row {
+      ::ng-deep h2{
+        font-size: 46px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 437px) {
+  #banner {
+    .row {
+      ::ng-deep h2{
+        font-size: 39px;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 380px) {
   #banner {
     .row {
-      margin-top: -51px;
+      ::ng-deep h2{
+        font-size: 30px;
+      }
+    }
+  .mission ::ng-deep span {
+      font-size: 16px;
     }
   }
 }

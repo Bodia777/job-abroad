@@ -9,25 +9,26 @@ footer {
   position: relative;
 
   section {
-      padding: 0 50px;
-      display: flex;
+    padding: 0 50px;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
-    
+
     h3 {
       text-align: left;
       color: white;
       font-size: 26px;
       font-weight: 600;
     }
-}
-    .mapWrapper{
-        width: 33vw;
-        height: 100%;
-        position: absolute;
-        right: 0px;
-    }
+  }
+
+  .mapWrapper {
+    width: 33vw;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+  }
 
   .contacts {
     display: block;
@@ -95,12 +96,70 @@ footer {
       }
     }
   }
-  .col-12{
+
+  .col-12 {
     margin-left: -20px;
-    .btn{
+
+    .btn {
       font-size: 20px;
       height: 50px;
       width: 251.55px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer {
+    height: 460px;
+    padding-top: 3px;
+
+    .col-sm-6 {
+      padding-left: 90px;
+    }
+
+    .row {
+      margin-top: 220px;
+
+      .col-md-12 {
+        height: 230px;
+      }
+    }
+
+    .mapWrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    height: 600px;
+
+    .col-12 .btn {
+      margin-bottom: 44px;
+    }
+
+    .container {
+      .row {
+        .companyName {
+          background-color: #5e7b8a;
+          padding-top: 48px;
+          width: 100vw;
+          margin-left: 2px;
+          margin-top: -52px;
+        }
+
+        .contacts {
+          padding-top: 24px;
+          text-align: center;
+          .footerContacts{
+            line-height: 27px;
+          }
+        }
+      }
     }
   }
 }
