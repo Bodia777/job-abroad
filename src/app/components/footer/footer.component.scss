@@ -126,8 +126,9 @@ footer {
     }
 
     .mapWrapper {
+      height: 230px;
+      top: 0px;
       width: 100%;
-      height: 100%;
       position: absolute;
       left: 0px;
     }
@@ -140,8 +141,9 @@ footer {
 
     .col-12{ 
       margin-left: 0px;
+
       .btn {
-        margin-left: -15px;;
+        margin-left: -15px;
         margin-bottom: 44px;
       } 
     }
