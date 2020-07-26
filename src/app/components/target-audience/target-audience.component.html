@@ -1,0 +1,23 @@
+<section id="vacancies">
+    <div class="imgWrapper">
+        <div class="img"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-5 offset-7 align-items-left">
+                <h3 class="title">{{ content.title.toUpperCase()}}</h3>
+
+                <ul>
+                    <li *ngFor="let item of content.vacancyList">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 offset-7 align-items-left">
+                <h5>{{content.vacancyInfo}}</h5>
+                    <p><span *ngFor="let item of content.vacancyInfoList">{{item}}</span></p>
+            </div>
+        </div>
+    </div>
+</section>

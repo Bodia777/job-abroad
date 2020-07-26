@@ -9,6 +9,7 @@ interface IAboutUsBlock {
 }
 
 export interface IAboutUsText {
+    title: string;
     blocks: IAboutUsBlock[];
 }
 
@@ -28,8 +29,15 @@ export interface IGoalsText {
 }
 
 export interface IPartners {
-        title: string;
-        partnersList: string[];
+    title: string;
+    partnersList: string[];
+}
+
+export interface IAudience {
+    title: string;
+    vacancyList: string[];
+    vacancyInfo: string;
+    vacancyInfoList: string[]
 }
 
 export interface IFooter {
@@ -44,6 +52,7 @@ export interface Text {
     goalsText: IGoalsText;
     aboutUsText: IAboutUsText;
     partners: IPartners;
+    audience: IAudience;
     modalTitle: string;
     modalMessage: {
         requiredMessage: string;

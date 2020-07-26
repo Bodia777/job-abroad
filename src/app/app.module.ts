@@ -12,6 +12,7 @@ import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { PartnersComponent } from './components/partners/partners.component';
+import { TargetAudienceComponent } from './components/target-audience/target-audience.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PartnersComponent } from './components/partners/partners.component';
     AboutComponent,
     FooterComponent,
     ModalComponent,
-    PartnersComponent
+    PartnersComponent,
+    TargetAudienceComponent
   ],
   imports: [
     BrowserModule,

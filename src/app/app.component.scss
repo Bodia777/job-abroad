@@ -1,3 +1,26 @@
 body{
     overflow-x: hidden;
+
+  section {
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  .imgWrapper {
+    position: absolute;
+    top: 0;
+
+    .img {
+      background-size: cover;
+      position: fixed;
+      transition-property: top;
+      width: 50vw;
+      height: 50vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
 }

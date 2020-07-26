@@ -9,6 +9,7 @@
     background-color: rgb(86, 178, 250, .1);
 
     ul {
+      margin-top: 25px;
       list-style-type: none;
 
       li {
@@ -31,36 +32,3 @@
     }
   }
 }
-
-//.aboutUs {
-//    background: url('/assets/images/workersGroup2.jpg') no-repeat center center fixed;
-//    background-size: cover;
-//    padding: 200px 0px;
-//    text-shadow: 1px 1px 1px grey;
-//    // height: 700px;
-//
-//    .textWrapper {
-//    //   margin: 350px 0px;
-//      width: 100%;
-//      background-color: rgb(221, 221, 217);
-//      background: linear-gradient(90deg, rgba(83, 160, 231, 0.7), rgba(214, 225, 235, 0.3));
-//
-//      h3 {
-//        margin-left: 30px;
-//        color: var(--blue);
-//        font-size: 45px;
-//        text-shadow: 1px 1px 1px grey;
-//      }
-//
-//      ul {
-//        padding: 20px 40px;
-//
-//        li {
-//          font-size: 21px;
-//          color: black;
-//          font-weight: 700;
-//          text-shadow: 1px 1px 1px grey;
-//        }
-//      }
-//    }
-//  }

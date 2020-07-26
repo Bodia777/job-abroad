@@ -28,11 +28,8 @@ export class LanguageService {
                     href: 'partners',
                     text: 'Партнери'
                 }, {
-                    href: 'block_5',
-                    text: 'Блок 5'
-                }, {
-                    href: 'block_6',
-                    text: 'Блок 6'
+                    href: 'vacancies',
+                    text: 'Вакансії'
                 }],
                 languageOptions: ['UA', 'RU']
             },
@@ -50,6 +47,7 @@ export class LanguageService {
                 ]
             },
             aboutUsText: {
+                title: 'Про нас',
                 blocks: [{
                     icon: '/assets/icon/002-portfolio.svg',
                     text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
@@ -75,6 +73,12 @@ export class LanguageService {
                 partnersList: [
                     'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
                 ]
+            },
+            audience: {
+                title: `Для кого вакансії`,
+                vacancyList: ['Для людей віком від 18 до 52', 'Для сімейних пар', 'Для чоловіків та жінок'],
+                vacancyInfo: 'Щоб дізнатись більше про вакансії зателефонуйте або напишіть нашому фахівцю з рекрутингу, який надасть вам детальну інформацію про:',
+                vacancyInfoList: ['Роботодавця', 'Локацію роботи', 'Оплату за роботу', 'Умови праці']
             },
             modalTitle: `Заповніть форму і ми зв'яжемось з Вами`,
             modalMessage: {
@@ -110,11 +114,8 @@ export class LanguageService {
                         href: 'partners',
                         text: 'Партнеры'
                     }, {
-                        href: 'block_5',
-                        text: 'Блок 5'
-                    }, {
-                        href: 'block_6',
-                        text: 'Блок 6'
+                        href: 'vacancies',
+                        text: 'Вакансии'
                     }],
                     languageOptions: ['UA', 'RU']
                 },
@@ -127,6 +128,7 @@ export class LanguageService {
                     blocks: []
                 },
                 aboutUsText: {
+                    title: 'О нас',
                     blocks: [{
                         icon: '/assets/icon/002-portfolio.svg',
                         text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
@@ -153,7 +155,12 @@ export class LanguageService {
                         'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
                     ]
                 },
-                connectionFormText: `<div><h2>ЗАПОЛНИТЕ ФОРМУ</h2><h3> И МЫ СВЯЖЕМСЯ С ВАМИ</h3></div>`,
+                audience: {
+                    title: `Для кого вакансии`,
+                    vacancyList: ["Для людей в возрасте от 18 до 52", "Для семейных пар", "Для мужчин и женщин"],
+                    vacancyInfo: 'Чтобы узнать больше о вакансиях позвоните или напишите нашему специалисту по подбору персонала, который предоставит вам подробную информацию о:',
+                    vacancyInfoList: ["Работодателя", "Локация работы", "Оплата за работу", "Условия труда"],
+                },
                 modalTitle: 'Заполните форму и мы свяжемся с Вами.',
                 modalMessage: {
                     requiredMessage: 'Поле обязательное для заполнения',
