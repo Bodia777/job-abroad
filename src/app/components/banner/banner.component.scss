@@ -1,21 +1,25 @@
 #banner {
+  padding-top: 110px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, #fff 50%, transparent 100%);
 
-
   .imgWrapper {
     left: 50%;
+    margin-top: 110px;
 
     .img {
       background-image: url('/assets/images/banner.jpg');
+
+      min-height: 400px;
     }
   }
 
   .mission {
     height: 50vh;
+    min-height: 400px;
     font-size: 18px;
 
     .row {
@@ -41,61 +45,32 @@
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   #banner {
-    .button_primary {
-      margin-top: 0px;
-    }
-  }
-}
-
-@media screen and (max-width: 762px) {
-  #banner {
-    height: 400px;
-
-    .imgWrapper {
-      top: 70px;
-
-      .img {
-        margin-top: -100px;
-        height: 74vh;
+    .mission {
+        ::ng-deep h2 {
+          font-size: 50px;
+        }
       }
-    }
-
-    .button_primary {
-      margin-top: 24px;
-    }
   }
 }
-@media screen and (max-width: 540px) {
+
+@media screen and (max-width: 768px) {
   #banner {
-    .row {
-      ::ng-deep h2{
-        font-size: 46px;
+    .mission {
+      ::ng-deep h2 {
+        font-size: 40px;
       }
     }
   }
 }
 
-@media screen and (max-width: 437px) {
+@media screen and (max-width: 576px) {
   #banner {
-    .row {
-      ::ng-deep h2{
-        font-size: 39px;
+    .mission {
+      ::ng-deep h2 {
+        font-size: 34px;
       }
-    }
-  }
-}
-
-@media screen and (max-width: 380px) {
-  #banner {
-    .row {
-      ::ng-deep h2{
-        font-size: 30px;
-      }
-    }
-  .mission ::ng-deep span {
-      font-size: 16px;
     }
   }
 }

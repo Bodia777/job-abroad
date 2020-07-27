@@ -12,14 +12,14 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   public headerText: IHeaderText;
-  public selectedLanguage = 'UA';
+  public selectedLanguage: string = 'UA';
   private unsubscribed = new Subject();
-  @ViewChild('navbar', {static: false}) navbar: ElementRef;
 
-  constructor(private languageService: LanguageService, private renderer: Renderer2) { }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
     this.subscLanguage();
+    this.getLanguage();
   }
 
   public chooseLanguage(language): void {
@@ -27,21 +27,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.languageService.changeLanguage(language);
   }
 
-  public togleMenu(): void {
-    const value = getComputedStyle(this.navbar.nativeElement).getPropertyValue('display');
-    if (value === 'none') {
-      this.renderer.setStyle(this.navbar.nativeElement.previousElementSibling, 'backgroundColor', 'rgb(223, 219, 219)');
-      this.renderer.setStyle(this.navbar.nativeElement, 'display', 'block');
-    } else {
-      this.renderer.setStyle(this.navbar.nativeElement.previousElementSibling, 'backgroundColor', 'rgb(255, 255, 255)');
-      this.renderer.setStyle(this.navbar.nativeElement, 'display', 'none');
-    }
-  }
-
   private subscLanguage(): void {
     this.languageService.content$
         .pipe(takeUntil(this.unsubscribed))
         .subscribe((text: Text) => this.headerText = text.headerText);
+  }
+
+  private getLanguage(): void {
+      this.selectedLanguage = this.languageService.getSelectedLanguage();
   }
 
     ngOnDestroy(): void {

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
-import { Text } from 'src/app/interfaces/language.interface';
+import { Text, IModal } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
 import { ServerConnectionService } from 'src/app/services/server-connection.service';
 import { Subject } from 'rxjs';
@@ -12,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  public content: any;
+  public content: IModal;
   private unsubscribed = new Subject();
   public regExpForName = /^([^\s]+)([\s]*)([^\s]*)([\s]*)([^\s]*)$/;
   public regExpForEmail = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z]{2,4})$/i;
@@ -72,8 +72,8 @@ export class ModalComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
       .pipe(takeUntil(this.unsubscribed))
-      .subscribe((value: Text) => {
-        this.content = value;
+      .subscribe(({ modalText }) => {
+        this.content = modalText;
       });
   }
 

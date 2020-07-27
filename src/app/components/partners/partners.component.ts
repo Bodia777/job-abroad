@@ -28,6 +28,6 @@ export class PartnersComponent implements OnInit, OnDestroy {
     private subscLanguage(): void {
         this.languageService.content$
             .pipe(takeUntil(this.unsubscribed))
-            .subscribe(({ partners}) => this.content = partners);
+            .subscribe(({ partnersText}) => this.content = partnersText);
     }
 }

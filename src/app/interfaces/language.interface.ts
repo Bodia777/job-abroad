@@ -46,13 +46,7 @@ export interface IFooter {
     footerButton: string;
 }
 
-export interface Text {
-    headerText: IHeaderText;
-    bannerText: IBannerText;
-    goalsText: IGoalsText;
-    aboutUsText: IAboutUsText;
-    partners: IPartners;
-    audience: IAudience;
+export interface IModal {
     modalTitle: string;
     modalMessage: {
         requiredMessage: string;
@@ -66,5 +60,15 @@ export interface Text {
         textareaLabel: string;
     };
     buttons: string[];
-    footer: IFooter;
+}
+
+export interface Text {
+    headerText: IHeaderText;
+    bannerText: IBannerText;
+    goalsText: IGoalsText;
+    aboutUsText: IAboutUsText;
+    partnersText: IPartners;
+    audienceText: IAudience;
+    modalText: IModal;
+    footerText: IFooter;
 }

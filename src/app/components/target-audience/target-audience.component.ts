@@ -27,6 +27,6 @@ export class TargetAudienceComponent implements OnInit, OnDestroy {
     private subscLanguage(): void {
         this.languageService.content$
             .pipe(takeUntil(this.unsubscribed))
-            .subscribe(({ audience}) => this.content = audience);
+            .subscribe(({ audienceText}) => this.content = audienceText);
     }
 }

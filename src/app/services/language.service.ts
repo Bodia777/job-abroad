@@ -2,188 +2,51 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Text } from 'src/app/interfaces/language.interface';
 
+import { headerText, bannerText, goalsText, aboutUsText, partnersText, audienceText, modalText, footerText } from '../constants/index';
+
 @Injectable({
     providedIn: 'root'
 })
 
 export class LanguageService {
+    selected: string;
+    content$: BehaviorSubject<Text>
 
     constructor() {
+        this.selected = localStorage.getItem('lng') || 'UA';
+        this.content$ = new BehaviorSubject<Text>(this.contentContainer[this.selected.toUpperCase()]);
     }
 
-
     public contentContainer = {
-        ua: {
-            headerText: {
-                navigation: [{
-                    href: 'mission',
-                    text: 'Місія'
-                }, {
-                    href: 'purposes',
-                    text: 'Цілі'
-                }, {
-                    href: 'about_us',
-                    text: 'Про Нас'
-                }, {
-                    href: 'partners',
-                    text: 'Партнери'
-                }, {
-                    href: 'vacancies',
-                    text: 'Вакансії'
-                }],
-                languageOptions: ['UA', 'RU']
-            },
-            bannerText: {
-                bannerButton: 'Зв\'язатись з нами',
-                mission: `<h2>Професійно. <br> Вчасно. <br> Надійно. </h2> <span>Ми знаємо - таке працевлаштування  <br>закордоном можливе разом з нами.</span>`
-            },
-            goalsText: {
-                goalsTitle: 'НАШІ ЦІЛІ:',
-                blocks: [
-                    'Надати <span>професійні послуги</span> з працевлаштування, щоб змінити вашу роботу та життя на краще',
-                    '<span>Забезпечити</span> гідною <span>вакансією</span> кожного кандидата',
-                    '<span>Відповідати критеріям</span> роботодавців на міжнародному рівні',
-                    'Максимально <span>виправдовувати очікування</span> потреб кандидатів щодо вакантного місця праці'
-                ]
-            },
-            aboutUsText: {
-                title: 'Про нас',
-                blocks: [{
-                    icon: '/assets/icon/002-portfolio.svg',
-                    text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
-                }, {
-                    icon: '/assets/icon/001-network.svg',
-                    text: 'Індивідуальний підхід до кожного клієнта',
-                }, {
-                    icon: '/assets/icon/003-trust.svg',
-                    text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
-                },  {
-                    icon: '/assets/icon/006-support.svg',
-                    text: 'Консультуємо при підборі вакансії та допомагаємо грамотно оформити усі необхідні документи',
-                }, {
-                    icon: '/assets/icon/004-star.svg',
-                    text: 'Гарантуємо швидке та якісне виконання наших послуг',
-                }, {
-                    icon: '/assets/icon/005-file.svg',
-                    text: 'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
-                }]
-            },
-            partners: {
-                title: 'Наші партнери, яким ми довіряємо',
-                partnersList: [
-                    'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
-                ]
-            },
-            audience: {
-                title: `Для кого вакансії`,
-                vacancyList: ['Для людей віком від 18 до 52', 'Для сімейних пар', 'Для чоловіків та жінок'],
-                vacancyInfo: 'Щоб дізнатись більше про вакансії зателефонуйте або напишіть нашому фахівцю з рекрутингу, який надасть вам детальну інформацію про:',
-                vacancyInfoList: ['Роботодавця', 'Локацію роботи', 'Оплату за роботу', 'Умови праці']
-            },
-            modalTitle: `Заповніть форму і ми зв'яжемось з Вами`,
-            modalMessage: {
-                requiredMessage: 'Поле обов\'язкове для заповнення',
-                patternMessage: 'Поле заповнене неправильно',
-                textareaMessage: 'Коментарі щодо часу дзвінка, бажаної професії, та ін.'
-            },
-            modalLabel: {
-                nameLabel: 'Прізвище, ім\'я',
-                emailLabel: 'Email-адреса',
-                phoneLabel: 'Телефон',
-                textareaLabel: 'Коментарі'
-            },
-            buttons: ['ЗАПОВНИТИ', 'ПІДТВЕРДИТИ', 'ВІДМІНИТИ'],
-            footer: {
-                contacts: ['097 23 00 202', '099 23 00 202', 'ukrprowork@gmail.com', 'м. Львів, вул. Зелена, 81'],
-                companyName: 'ТОВ "ПРОФЕСІЙНА АГЕНЦІЯ ПРАЦІ"',
-                footerButton: 'Зв\'язатись з нами'
-            }
+        UA: {
+            headerText: headerText.ua,
+            bannerText: bannerText.ua,
+            goalsText: goalsText.ua,
+            aboutUsText: aboutUsText.ua,
+            partnersText: partnersText.ua,
+            audienceText: audienceText.ua,
+            modalText: modalText.ua,
+            footerText: footerText.ua
         },
-        ru: {
-            headerText: {
-                    navigation: [{
-                        href: 'mission',
-                        text: 'Миссия'
-                    }, {
-                        href: 'purposes',
-                        text: 'Цели'
-                    }, {
-                        href: 'about_us',
-                        text: 'О Нас'
-                    }, {
-                        href: 'partners',
-                        text: 'Партнеры'
-                    }, {
-                        href: 'vacancies',
-                        text: 'Вакансии'
-                    }],
-                    languageOptions: ['UA', 'RU']
-                },
-                bannerText: {
-                    bannerButton: 'Свяжитесь с нами',
-                    mission: `<h2 style="font-weight: 600">Профессионально. <br> В срок. <br> Надежно. </h2> <span style="font-size: 24px">Мы знаем - такое трудоустройство <br> за рубежом возможно вместе с нами.</span>`
-                },
-                goalsText: {
-                    goalsTitle: 'НАШИ ЦЕЛИ:',
-                    blocks: []
-                },
-                aboutUsText: {
-                    title: 'О нас',
-                    blocks: [{
-                        icon: '/assets/icon/002-portfolio.svg',
-                        text: 'Надаємо послуги офіційного працевлаштування на роботу в Польщі',
-                    }, {
-                        icon: '/assets/icon/001-network.svg',
-                        text: 'Індивідуальний підхід до кожного клієнта',
-                    }, {
-                        icon: '/assets/icon/003-trust.svg',
-                        text: 'Надаємо виключно достовірні дані про наших роботодавців та умови, які вони пропонують охочим працювати в їхніх компаніях',
-                    },  {
-                        icon: '/assets/icon/006-support.svg',
-                        text: 'Консультуємо при підборі вакансії та допомагаємо грамотно оформити усі необхідні документи',
-                    }, {
-                        icon: '/assets/icon/004-star.svg',
-                        text: 'Гарантуємо швидке та якісне виконання наших послуг',
-                    }, {
-                        icon: '/assets/icon/005-file.svg',
-                        text: 'Працюємо згідно ліцензії Міністерства розвитку економіки, торгівлі та сільського господарства України.(Наказ №1244-20 від 30.06.2020)'
-                    }]
-                },
-                partners: {
-                    title: 'Наші партнери, яким ми довіряємо',
-                    partnersList: [
-                        'samsung.svg', 'sews.png', 'lg.png', 'philips.png'
-                    ]
-                },
-                audience: {
-                    title: `Для кого вакансии`,
-                    vacancyList: ["Для людей в возрасте от 18 до 52", "Для семейных пар", "Для мужчин и женщин"],
-                    vacancyInfo: 'Чтобы узнать больше о вакансиях позвоните или напишите нашему специалисту по подбору персонала, который предоставит вам подробную информацию о:',
-                    vacancyInfoList: ["Работодателя", "Локация работы", "Оплата за работу", "Условия труда"],
-                },
-                modalTitle: 'Заполните форму и мы свяжемся с Вами.',
-                modalMessage: {
-                    requiredMessage: 'Поле обязательное для заполнения',
-                    patternMessage: 'Поле заполнено неправильно',
-                    textareaMessage: 'Коментарии касательно времени дзвонка, професии и др.'
-                },
-                modalLabel: {
-                    nameLabel: 'Имя, фамилия',
-                    emailLabel: 'Email-адрес',
-                    phoneLabel: 'Телефон',
-                    textareaLabel: 'Коментарии'
-                },
-                buttons: ['ЗАПОЛНИТЬ', 'ПОДТВЕРДИТЬ', 'ОТМЕНА'],
-                footer: {
-                    footerButton: 'Свяжитесь с нами',
-                    contacts: ['097 23 00 202', '099 23 00 202', 'ukrprowork@gmail.com', 'г. Львов, ул. Зеленая, 81'],
-                    companyName: 'ООО "ПРОФЕССИОНАЛЬНОЕ АГЕНСТВО ТРУДА"'
-                }
-            }
+        RU: {
+            headerText: headerText.ru,
+            bannerText: bannerText.ru,
+            goalsText: goalsText.ru,
+            aboutUsText: aboutUsText.ru,
+            partnersText: partnersText.ru,
+            audienceText: audienceText.ru,
+            modalText: modalText.ru,
+            footerText: footerText.ru,
+        }
     };
-    public content$ = new BehaviorSubject<Text>(this.contentContainer.ua);
 
     public changeLanguage(language): void {
-        this.content$.next(this.contentContainer[language.toLowerCase()]);
+        this.selected = language.toUpperCase()
+        this.content$.next(this.contentContainer[this.selected]);
+        localStorage.setItem('lng', this.selected)
+    }
+
+    public getSelectedLanguage(): string {
+        return this.selected;
     }
 }

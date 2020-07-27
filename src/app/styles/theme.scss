@@ -1,8 +1,11 @@
-@import "node_modules/bootstrap/scss/bootstrap";
+$theme-colors: (
+        "primary": rgb(86, 178, 250),
+        "secondary": rgba(61, 81, 97, .6)
+);
 
 :root {
     --blue: rgb(86, 178, 250);
-    --secondary-theme:#c2185b;
+    --secondary-theme: rgba(61, 81, 97, .6);
   }
 
 body {
@@ -10,26 +13,6 @@ body {
     padding: 10px 45px;
     border-radius: 100px 100px 100px 100px;
     border: none;
-  }
-
-  .button_close {
-    border: 2px solid
-  }
-
-  .button_primary{
-    background-color: var(--blue);
-
-    &:hover {
-      background-color: var(--blue);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 0.2rem rgba(86, 178, 250,.5);
-      background-color: var(--blue);
-    }
-
-    &:disabled {
-      background-color: var(--blue);
-    }
+    color: #fff;
   }
 }

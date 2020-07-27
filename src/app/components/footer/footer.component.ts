@@ -28,6 +28,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
     .pipe(takeUntil(this.unsubscribed))
-    .subscribe((value: Text) => this.content = value.footer);
+    .subscribe(({ footerText }) => this.content = footerText);
 }
 }

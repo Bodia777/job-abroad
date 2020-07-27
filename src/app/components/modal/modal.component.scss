@@ -1,6 +1,4 @@
 #modal {
-  margin-top: 10%;
-
   .modal-content {
     width: 110%;
   }
@@ -61,26 +59,8 @@
 
 @media screen and (max-width: 550px) {
   #modal {
-    .modal-body {
-      .container {
-        .button {
-          width: 48%;
-          display: flex;
-          justify-content: center;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #modal {
-    .modal-body {
-      .container {
-        .button {
-          font-size: 15px;
-        }
-      }
+    .dspl-flx-jstf-spc-btwn {
+      flex-direction: column;
     }
   }
 }
