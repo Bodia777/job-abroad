@@ -1,5 +1,4 @@
 #header {
-  position: -webkit-sticky;
   position: fixed;
   width: 100vw;
   background-color: white;
@@ -26,7 +25,7 @@
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
-    color: var(--blue);
+    color: var(--primary);
     vertical-align: middle;
     margin-bottom: 0;
     font-size: 16px;
@@ -40,7 +39,7 @@
     }
 
     .active_language {
-      border-bottom: 2px solid var(--blue);
+      border-bottom: 2px solid var(--primary);
     }
   }
 
@@ -57,7 +56,7 @@
     }
 
     a {
-      color: #000;
+      color: #212529;
       font-size: 16px;
       font-weight: 400;
     }
@@ -66,16 +65,21 @@
       background-color: transparent;
       font-weight: 600;
       border-radius: 0;
-      border-bottom: 2px solid var(--blue);
+      border-bottom: 2px solid var(--primary);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    img {
+      height: 90px;
     }
   }
 }
 
 @media screen and (max-width: 575px) {
   #header {
-
-    img {
-      height: 90px;
-    }
+    position: static;
   }
 }

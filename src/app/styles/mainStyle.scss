@@ -2,20 +2,22 @@
     src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf');
     font-family: worksans;
 }
-body{
-    font-family: worksans;
-    font-weight: 500;
-    font-size: 13px;
-   position: relative;
+body, p, a {
+  font-family: worksans, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  color: #212529;
 }
 .dspl-flx-jstf-spc-rnd{
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 .dspl-flx-jstf-flx-strt{
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
+
 .dspl-flx-jstf-spc-btwn{
   display: flex;
   justify-content: space-between;

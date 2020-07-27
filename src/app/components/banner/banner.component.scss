@@ -20,7 +20,6 @@
   .mission {
     height: 50vh;
     min-height: 400px;
-    font-size: 18px;
 
     .row {
       height: 100%;
@@ -57,6 +56,13 @@
 
 @media screen and (max-width: 768px) {
   #banner {
+    padding-top: 90px;
+
+
+    .imgWrapper {
+      margin-top: 90px;
+    }
+
     .mission {
       ::ng-deep h2 {
         font-size: 40px;
@@ -67,6 +73,12 @@
 
 @media screen and (max-width: 576px) {
   #banner {
+    padding-top: 10px;
+
+    .imgWrapper {
+      margin-top: 10px;
+    }
+
     .mission {
       ::ng-deep h2 {
         font-size: 34px;

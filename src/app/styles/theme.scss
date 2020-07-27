@@ -1,12 +1,10 @@
-$theme-colors: (
-        "primary": rgb(86, 178, 250),
-        "secondary": rgba(61, 81, 97, .6)
-);
+$primary:  rgb(86, 178, 250);
+$secondary: rgba(61, 81, 97, .6);
 
-:root {
-    --blue: rgb(86, 178, 250);
-    --secondary-theme: rgba(61, 81, 97, .6);
-  }
+$theme-colors: (
+        "primary": $primary,
+        "secondary": $secondary
+);
 
 body {
   .button {
@@ -14,5 +12,9 @@ body {
     border-radius: 100px 100px 100px 100px;
     border: none;
     color: #fff;
+
+    &:disabled{
+      color: #fff;
+    }
   }
 }

@@ -1,11 +1,10 @@
 #footer {
   display: flex;
-  height: 230px;
   background-color: rgb(61, 81, 97);
   align-items: center;
-  justify-content: space-around;
   color: white;
   position: relative;
+  padding: 40px 0;
 
   .button_primary{
     margin-top: 25px;
@@ -17,6 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 0;
 
     li {
       font-size: 17px;
@@ -35,19 +35,17 @@
         width: 43vw;
         height: 100%;
         position: absolute;
-        right: 0px;
+        right: 0;
 
       iframe {
         width: 100%;
+        height: 100%;
       }
     }
 }
 
 @media screen and (max-width: 991px) {
   #footer {
-    height: 460px;
-    padding-top: 3px;
-
     .container {
       margin-top: 230px;
     }
@@ -56,7 +54,6 @@
       height: 230px;
       top: 0px;
       width: 100%;
-      position: absolute;
       left: 0px;
     }
   }
@@ -64,8 +61,6 @@
 
 @media screen and (max-width: 576px) {
   #footer {
-    height: 600px;
-
     .align-self-center{
       text-align: center;
 

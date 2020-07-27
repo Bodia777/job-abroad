@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Text, IFooter } from 'src/app/interfaces/language.interface';
+import { IFooter } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
