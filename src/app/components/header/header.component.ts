@@ -3,6 +3,7 @@ import { LanguageService } from 'src/app/services/language.service';
 import { IHeaderText, Text } from 'src/app/interfaces/language.interface';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import {GoogleAnaliticsService} from "../../services/google-analitics.service";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public selectedLanguage: string = 'UA';
   private unsubscribed = new Subject();
 
-  constructor(private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService, private googleAnaliticsService: GoogleAnaliticsService) { }
 
   ngOnInit(): void {
     this.subscLanguage();
@@ -25,6 +26,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public chooseLanguage(language): void {
       this.selectedLanguage = language.toUpperCase();
       this.languageService.changeLanguage(language);
+      this.googleAnaliticsService
+          .eventEmitter('select-language', language, 'click');
   }
 
   private subscLanguage(): void {

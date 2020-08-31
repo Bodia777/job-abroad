@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { PartnersComponent } from './components/partners/partners.component';
 import { TargetAudienceComponent } from './components/target-audience/target-audience.component';
+import {GoogleAnaliticsService} from "./services/google-analitics.service";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { TargetAudienceComponent } from './components/target-audience/target-aud
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [GoogleAnaliticsService],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })
