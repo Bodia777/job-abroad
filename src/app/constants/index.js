@@ -1,3 +1,4 @@
+import headOption from './lng/head.constants';
 import headerText from './lng/header.constants';
 import bannerText from './lng/banner.constants';
 import goalsText from './lng/goals.constants';
@@ -8,6 +9,7 @@ import modalText from './lng/modal.constants';
 import footerText from './lng/footer.constants';
 
 export {
+  headOption,
   headerText,
   bannerText,
   goalsText,

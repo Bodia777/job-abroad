@@ -1,3 +1,9 @@
+export interface IHeadOption {
+    languageOption: string,
+    title: string,
+    description: string
+}
+
 interface INavigation {
     href: string;
     text: string;
@@ -63,6 +69,7 @@ export interface IModal {
 }
 
 export interface Text {
+    headOption: IHeadOption;
     headerText: IHeaderText;
     bannerText: IBannerText;
     goalsText: IGoalsText;

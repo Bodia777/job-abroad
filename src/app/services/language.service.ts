@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Text } from 'src/app/interfaces/language.interface';
 
-import { headerText, bannerText, goalsText, aboutUsText, partnersText, audienceText, modalText, footerText } from '../constants/index';
+import {
+    headOption, headerText, bannerText, goalsText, aboutUsText, partnersText, audienceText, modalText, footerText,
+} from '../constants/index';
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +21,7 @@ export class LanguageService {
 
     public contentContainer = {
         UA: {
+            headOption: headOption.ua,
             headerText: headerText.ua,
             bannerText: bannerText.ua,
             goalsText: goalsText.ua,
@@ -29,6 +32,7 @@ export class LanguageService {
             footerText: footerText.ua
         },
         RU: {
+            headOption: headOption.ru,
             headerText: headerText.ru,
             bannerText: bannerText.ru,
             goalsText: goalsText.ru,

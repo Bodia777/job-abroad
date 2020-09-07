@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { IHeaderText, Text } from 'src/app/interfaces/language.interface';
 import { Subject } from 'rxjs';
@@ -40,8 +40,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.selectedLanguage = this.languageService.getSelectedLanguage();
   }
 
-    ngOnDestroy(): void {
-        this.unsubscribed.next();
-        this.unsubscribed.complete();
-    }
+  ngOnDestroy(): void {
+      this.unsubscribed.next();
+      this.unsubscribed.complete();
+  }
 }
