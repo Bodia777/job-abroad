@@ -15,6 +15,8 @@ import { PartnersComponent } from './components/partners/partners.component';
 import { TargetAudienceComponent } from './components/target-audience/target-audience.component';
 import {GoogleAnaliticsService} from "./services/google-analitics.service";
 import {AppRoutingModule} from "./app-routing.module";
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {AppRoutingModule} from "./app-routing.module";
     FooterComponent,
     ModalComponent,
     PartnersComponent,
-    TargetAudienceComponent
+    TargetAudienceComponent,
+    PrivacyPolicyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

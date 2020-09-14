@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
-import { Text, IModal } from 'src/app/interfaces/language.interface';
+import { IModal } from 'src/app/interfaces/language.interface';
 import { LanguageService } from 'src/app/services/language.service';
 import { ServerConnectionService } from 'src/app/services/server-connection.service';
 import { Subject } from 'rxjs';
@@ -18,7 +18,6 @@ export class ModalComponent implements OnInit, OnDestroy {
   public regExpForEmail = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z]{2,4})$/i;
   public regExpForPhone = /^(\+38-0([1-9])([0-9])-([0-9]{3})-([0-9]{2})-([0-9]{2}))$/;
   public connectionForm: FormGroup;
-
 
   constructor(
     private fb: FormBuilder, private serverConnectionService: ServerConnectionService,

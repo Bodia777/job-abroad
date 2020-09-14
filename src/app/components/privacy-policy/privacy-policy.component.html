@@ -1,0 +1,20 @@
+<div id="privacy">
+    <div class="bg-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>{{content.title}}</h3>
+                    <p>{{content.generalInfo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="policy col-12" *ngFor="let item of content.paragraphs">
+                <h4 [innerHTML]="item.title"></h4>
+                <p [innerHTML]="item.content"></p>
+            </div>
+        </div>
+    </div>
+</div>

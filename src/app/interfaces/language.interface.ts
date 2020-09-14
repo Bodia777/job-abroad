@@ -68,6 +68,15 @@ export interface IModal {
     buttons: string[];
 }
 
+export interface IPrivacyPolicy {
+    title: string;
+    generalInfo: string;
+    paragraphs: {
+        title: string,
+        content: string,
+    }[],
+}
+
 export interface Text {
     headOption: IHeadOption;
     headerText: IHeaderText;
@@ -78,4 +87,5 @@ export interface Text {
     audienceText: IAudience;
     modalText: IModal;
     footerText: IFooter;
+    privacyPolicy: IPrivacyPolicy;
 }

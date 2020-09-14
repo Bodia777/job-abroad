@@ -7,6 +7,7 @@ import partnersText from './lng/partners.constants';
 import audienceText from './lng/audience.constants';
 import modalText from './lng/modal.constants';
 import footerText from './lng/footer.constants';
+import privacyPolicy from './lng/privacy-policy.constants';
 
 export {
   headOption,
@@ -18,5 +19,6 @@ export {
   audienceText,
   modalText,
   footerText,
+  privacyPolicy,
 }
 

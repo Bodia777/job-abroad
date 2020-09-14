@@ -29,5 +29,5 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.languageService.content$
     .pipe(takeUntil(this.unsubscribed))
     .subscribe(({ footerText }) => this.content = footerText);
-}
+  }
 }
