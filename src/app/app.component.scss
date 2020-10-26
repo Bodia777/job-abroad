@@ -19,9 +19,29 @@ body{
       position: fixed;
       transition-property: top;
       width: 50vw;
-      height: 50vh;
+      height: 60vh;
       object-fit: cover;
       z-index: -1;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  body {
+    .imgWrapper {
+      .img {
+        height: 50vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    .imgWrapper {
+      .img {
+        width: 60vh;
+      }
     }
   }
 }

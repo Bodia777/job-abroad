@@ -1,0 +1,32 @@
+<section id="about_us" class="eclipse">
+    <div class="wrapper">
+      <div class="container">
+          <div class="row justify-content-md-center">
+              <h3 class="title">{{ aboutUsText.title.toUpperCase() }}</h3>
+          </div>
+        <ul class="row">
+          <li class="col-lg-4 col-sm-6 col-12" *ngFor="let item of aboutUsText.blocks; let i = index">
+            <div data-aos="fade-zoom-in" class="card">
+              <img class="card-img-top" src="{{item.icon}}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">{{item.text}}</p>
+                  <div class="flex">
+                      <button class="btn btn-primary btn-sm button button_primary"
+                              *ngIf="i === 3" (click)="selectServiceModal('freeServiceModal')"
+                              type="button" data-toggle="modal" data-target="#free-service-modal">
+                          {{servicesBtns[0]}}
+                      </button>
+                      <button class="btn btn-primary btn-sm button button_primary"
+                              *ngIf="i === 3" (click)="selectServiceModal('additionServiceModal')"
+                              type="button" data-toggle="modal" data-target="#free-service-modal">
+                          {{servicesBtns[1]}}
+                      </button>
+                  </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<app-free-service-modal *ngIf="selectedContent" [content]="selectedContent"></app-free-service-modal>

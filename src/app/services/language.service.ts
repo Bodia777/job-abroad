@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Text } from 'src/app/interfaces/language.interface';
-
 import {
-    headOption, headerText, bannerText, goalsText, aboutUsText, partnersText, audienceText, modalText, footerText, privacyPolicy,
-} from '../constants/index';
+    headOption, headerText, bannerText, goalsText, aboutUsText, partnersText, audienceText, modalText,
+    footerText, privacyPolicy, vacancyText, freeServiceModal, additionServiceModal, contactText,
+} from '../constants/lng';
 
 @Injectable({
     providedIn: 'root'
@@ -31,6 +31,10 @@ export class LanguageService {
             modalText: modalText[selected],
             footerText: footerText[selected],
             privacyPolicy: privacyPolicy[selected],
+            vacancyText: vacancyText[selected],
+            contactText: contactText[selected],
+            freeServiceModal: freeServiceModal[selected],
+            additionServiceModal: additionServiceModal[selected],
         }
     };
 

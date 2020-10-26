@@ -1,0 +1,22 @@
+<div id="vacancy" class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <img class="responsive_img" [src]="content.img">
+            <div class="text_wrapper">
+                <div class="flex">
+                    <h2>{{content.title}}</h2>
+                    <button class="btn btn-primary btn-lg button button_primary" type="button" data-toggle="modal" data-target="#application-modal">{{content.btnPopUp}}</button>
+                </div>
+               <table>
+                    <tbody>
+                        <tr *ngFor="let item of content.description">
+                            <td style="width: 25%; font-weight: 900">{{item.head.toUpperCase()}}</td>
+                            <td style="width: 75%; white-space: pre-wrap;">{{item.paragraph}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<application-modal></application-modal>

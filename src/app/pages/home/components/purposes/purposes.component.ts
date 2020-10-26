@@ -1,17 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { IFooter } from './footer.interface';
+import { IGoalsText } from './purposes.interface';
 import { LanguageService } from 'src/app/services/language.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: 'app-purposes',
+  templateUrl: './purposes.component.html',
+  styleUrls: ['./purposes.component.scss']
 })
-
-export class FooterComponent implements OnInit, OnDestroy {
-  public content: IFooter;
+export class PurposesComponent implements OnInit, OnDestroy {
+  public content: IGoalsText | null;
   private unsubscribed = new Subject();
 
   constructor(public languageService: LanguageService) { }
@@ -28,6 +26,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   private subscLanguage(): void {
     this.languageService.content$
     .pipe(takeUntil(this.unsubscribed))
-    .subscribe(({ footerText }) => this.content = footerText);
-  }
+    .subscribe(({ goalsText}) => this.content = goalsText);
+}
 }

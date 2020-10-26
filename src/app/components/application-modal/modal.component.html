@@ -1,0 +1,53 @@
+<div class="modal fade" id="application-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container">
+                    <div>
+                        <h5 class="title">{{content.modalTitle}}</h5>
+                    </div>
+                    <form [formGroup]="connectionForm">
+                        <div class="form-group">
+                            <label for="name">{{content.modalLabel.nameLabel}}</label>
+                            <input type="text" formControlName="name" class="form-control shadow-none" id="name" aria-describedby="emailHelp"
+                                   required [pattern]="regExpForName">
+                            <small class="form-text text-muted warning">{{getErrorMessage('name', regExpForName)}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">{{content.modalLabel.emailLabel}}</label>
+                            <input type="email" formControlName="email" class="form-control shadow-none" id="email"
+                                   aria-describedby="emailHelp" required [pattern]="regExpForEmail">
+                            <small class="form-text text-muted warning">{{getErrorMessage('email', regExpForEmail)}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">{{content.modalLabel.phoneLabel}}</label>
+                            <input type="text" formControlName="phone" class="form-control shadow-none" id="phone" (keyup)="addRequiredFormatToNumber($event)"
+                                   required [pattern]="regExpForPhone">
+                            <small class="form-text text-muted warning">{{getErrorMessage('phone', regExpForPhone)}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">{{content.modalLabel.textareaLabel}}</label>
+                            <textarea formControlName="comment" class="form-control shadow-none" rows="1" id="comment"></textarea>
+                            <small class="form-text text-muted"></small>
+                        </div>
+                        <div class="form-check">
+                            <input required type="checkbox" class="form-check-input" id="personal-data" formControlName="personalData">
+                            <label class="form-check-label" for="personal-data">{{content.modalLabel.personalDataAgement}}</label>
+                        </div>
+                        <div class="form-check">
+                            <input required type="checkbox" class="form-check-input" id="doc-data" formControlName="docData">
+                            <label class="form-check-label" for="personal-data">{{content.modalLabel.docAgement.text}}
+                                <a href="/assets/documents/doc.docx" target="_blank">{{content.modalLabel.docAgement.link}}</a>
+                            </label>
+                        </div>
+
+                        <div class="dspl-flx-jstf-spc-btwn">
+                            <button class="btn btn-outline-secondary btn-lg button btn-secondary" (click)="cancel()" data-dismiss="modal" aria-label="Close">{{content.buttons[2]}}</button>
+                            <button class="btn btn-primary btn-lg button" (click)="aproveForm()" [disabled]="connectionForm.invalid" data-dismiss="modal">{{content.buttons[1]}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

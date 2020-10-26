@@ -1,0 +1,22 @@
+#free-service-modal {
+  .modal-title{
+    font-weight: 900;
+    font-size: 24px;
+  }
+
+  a {
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  ol {
+    margin: 50px 25px;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 21px;
+      white-space: pre-wrap;
+    }
+  }
+}

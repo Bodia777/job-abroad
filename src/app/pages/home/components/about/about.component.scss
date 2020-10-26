@@ -1,0 +1,45 @@
+#about_us{
+  background-color: #ffffff;
+  position: relative;
+
+  .wrapper {
+    padding: 130px 0 50px;
+    min-height: 100vh;
+    background-color: rgb(86, 178, 250, .1);
+    display: flex;
+    align-items: center;
+
+    ul {
+      margin-top: 25px;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 50px;
+
+        .card {
+          height: 100%;
+        }
+
+        img {
+          margin-top: 25px;
+          height: 90px;
+        }
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    button {
+      margin-top: 10px;
+      padding: 10px 25px;
+    }
+  }
+}

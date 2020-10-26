@@ -1,0 +1,19 @@
+<div class="modal fade" id="free-service-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"  *ngIf="content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{content.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <ol>
+                    <li *ngFor="let item of content.list">{{item}}</li>
+                    <a data-dismiss="modal" data-toggle="modal" data-target="#application-modal">{{content.link}}</a>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

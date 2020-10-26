@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
-import { IHeaderText, Text } from 'src/app/interfaces/language.interface';
+import { Text } from 'src/app/interfaces/language.interface';
+import { IHeaderText } from './header.interface';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import {GoogleAnaliticsService} from "../../services/google-analitics.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,7 +18,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public selectedLanguage: string = 'UA';
   private unsubscribed = new Subject();
 
-  constructor(private languageService: LanguageService, private googleAnaliticsService: GoogleAnaliticsService) { }
+  constructor(private languageService: LanguageService, private googleAnaliticsService: GoogleAnaliticsService,
+              protected router: Router) { }
 
   ngOnInit(): void {
     this.subscLanguage();
@@ -38,6 +41,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private getLanguage(): void {
       this.selectedLanguage = this.languageService.getSelectedLanguage();
+  }
+
+  public scroll (target): void {
+      if (target === 'contacts') {
+          this.router.navigate([`/${target}`]);
+      } else {
+          const elementList = document.querySelector('#' + target);
+          const element = elementList as HTMLElement;
+          element && element.scrollIntoView({ behavior: 'smooth' });
+      }
   }
 
   ngOnDestroy(): void {

@@ -1,0 +1,40 @@
+<section id="vacancies">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <h3 class="title">{{ content.title.toUpperCase()}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <ul>
+                    <li *ngFor="let item of content.vacancyList">{{item}}</li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h5>{{content.vacancyInfo}}</h5>
+                <p><span *ngFor="let item of content.vacancyInfoList">{{item}}</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of content.list; let i = index">
+                <div class="card">
+                    <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">{{item.shortDiscription}}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a [routerLink]="['vacancy', i]">{{item.btnDetails}}</a>
+                        <button class="btn btn-primary btn-sm button button_primary"
+                                type="button" data-toggle="modal" data-target="#application-modal">
+                            {{item.btnPopUp}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
