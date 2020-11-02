@@ -55,3 +55,16 @@
     justify-content: space-around;
   }
 }
+
+@media screen and (max-width: 575px) {
+  #vacancies {
+    button {
+      font-size: 15px;
+    }
+    .text-muted {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
