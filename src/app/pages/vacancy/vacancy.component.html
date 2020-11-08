@@ -5,7 +5,8 @@
             <div class="text_wrapper">
                 <div class="flex">
                     <h2>{{content.title}}</h2>
-                    <button class="btn btn-primary btn-lg button button_primary" type="button" data-toggle="modal" data-target="#application-modal">{{content.btnPopUp}}</button>
+                    <button class="btn btn-primary btn-lg button button_primary" type="button" data-toggle="modal"
+                            data-target="#application-modal">{{content.btnPopUp}}</button>
                 </div>
                <table>
                     <tbody>
@@ -19,4 +20,4 @@
         </div>
     </div>
 </div>
-<application-modal></application-modal>
+<application-modal [title]="content.title"></application-modal>

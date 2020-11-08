@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, Input, Output, EventEmitter} from '@angular/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { IBannerText } from './banner.interface';
 import { Subject } from 'rxjs';
@@ -10,6 +10,9 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit, OnDestroy {
+
+  @Output() public changeVacancy = new EventEmitter<string>();
+
   public content: IBannerText;
   private unsubscribed = new Subject();
 
@@ -29,4 +32,8 @@ export class BannerComponent implements OnInit, OnDestroy {
           .pipe(takeUntil(this.unsubscribed))
           .subscribe(({ bannerText}) => this.content = bannerText);
   }
+
+    public setVacancy (newVacansy) {
+        this.changeVacancy.emit(newVacansy)
+    }
 }

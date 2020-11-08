@@ -17,13 +17,14 @@ export class ServerConnectionService implements OnDestroy {
     this.unsubscribed.complete();
     }
 
- public postEmail(emailForm: Email) {
+ public postEmail(emailForm: Email, title) {
+      console.log(title, 'title><<<<<<<<<<<')
    const url = 'http://localhost:3000/email';
-   this.http.post(url, emailForm)
+   this.http.post(url, { ...emailForm, title })
    .pipe(
     takeUntil(this.unsubscribed)
     // catchError((err) => console.log(err))
    )
-    .subscribe((result) => console.log(result));
+    .subscribe((result) => null);
  }
 }

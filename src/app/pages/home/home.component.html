@@ -1,5 +1,7 @@
-<app-banner></app-banner>
+<app-banner (changeVacancy)="changeVacancy($event)"></app-banner>
 <app-purposes></app-purposes>
 <app-about></app-about>
 <app-partners></app-partners>
-<app-target-audience></app-target-audience>
+<app-target-audience (changeVacancy)="changeVacancy($event)"></app-target-audience>
+
+<application-modal [title]="vacansyTitle"></application-modal>

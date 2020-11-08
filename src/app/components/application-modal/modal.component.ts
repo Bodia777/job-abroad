@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { IModal } from './modal.interface';
 import { LanguageService } from 'src/app/services/language.service';
@@ -12,6 +12,9 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./modal.component.scss']
 })
 export class ApplicationModalComponent implements OnInit, OnDestroy {
+  @Input()
+  public title: string;
+
   public content: IModal;
   private unsubscribed = new Subject();
   public regExpForName = /^([^\s]+)([\s]*)([^\s]*)([\s]*)([^\s]*)$/;
@@ -35,7 +38,7 @@ export class ApplicationModalComponent implements OnInit, OnDestroy {
   }
 
   public aproveForm(): void {
-     this.serverConnectionService.postEmail(this.connectionForm.value);
+     this.serverConnectionService.postEmail(this.connectionForm.value, this.title);
      const timeOut = setTimeout(() => {
      this.connectionForm.reset();
      clearTimeout(timeOut);
@@ -43,11 +46,13 @@ export class ApplicationModalComponent implements OnInit, OnDestroy {
   }
 
   public getErrorMessage(formControl, regExp): string | null {
-    if (this.connectionForm.controls[formControl].hasError('required') || this.connectionForm.controls[formControl].value.match(/^(\+38-0__-___-__-__)$/)) {
+    if (this.connectionForm.controls[formControl].value &&
+        (this.connectionForm.controls[formControl].hasError('required') || this.connectionForm.controls[formControl].value.match(/^(\+38-0__-___-__-__)$/))
+    ) {
       return this.content.modalMessage.requiredMessage;
     }
     if (this.connectionForm.controls[formControl].dirty || this.connectionForm.controls[formControl].touched) {
-      if (!this.connectionForm.controls[formControl].value.match(regExp)) {
+      if (this.connectionForm.controls[formControl].value && !this.connectionForm.controls[formControl].value.match(regExp)) {
         this.connectionForm.controls[formControl].setErrors({});
         return this.content.modalMessage.patternMessage;
       }
@@ -62,7 +67,7 @@ export class ApplicationModalComponent implements OnInit, OnDestroy {
   private createForm(): void {
     this.connectionForm = this.fb.group({
       name: ['', [Validators.required, Validators.pattern]],
-      email: ['', [Validators.required, Validators.pattern]],
+      email: ['', [Validators.pattern]],
       phone: ['+38-0', [Validators.required, Validators.pattern]],
       comment: [''],
       personalData: [false, [Validators.required]],
